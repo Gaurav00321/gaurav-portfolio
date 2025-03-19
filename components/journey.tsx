@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, Award, Calendar } from "lucide-react";
+import AnimatedSection from "@/components/ui/animated-section";
+import { staggerContainer } from "@/lib/animation";
 
 const journeyItems = [
   {
@@ -12,18 +14,18 @@ const journeyItems = [
     title: "Chief Scientist",
     organization: "amTop Inc.",
     description:
-      "At amTop, my mission is to advance AI research and engineering, ensuring our technology remains cutting-edge and impactful. I believe in a future where AI seamlessly integrates with human decision-making, optimizing complex problem-solving while maintaining reliability and responsibility. Let’s push the limits of AI and redefine what’s possible.",
+      "At amTop, my mission is to advance AI research and engineering, ensuring our technology remains cutting-edge and impactful. I believe in a future where AI seamlessly integrates with human decision-making, optimizing complex problem-solving while maintaining reliability and responsibility. Let's push the limits of AI and redefine what's possible.",
     icon: Briefcase,
-    type: "work"
+    type: "work",
   },
   {
     year: "2025 - Present",
     title: "Founder",
     organization: "ThinkFLowGPT.",
     description:
-      "At ThinkFlowGPT, my mission is to advance AI-driven workflow automation, ensuring our technology remains intelligent, adaptive, and impactful. I envision a future where AI enhances decision-making and streamlines complex processes, making automation more efficient, reliable, and accessible. Let’s push the boundaries of AI and redefine how businesses operate.",
+      "At ThinkFlowGPT, my mission is to advance AI-driven workflow automation, ensuring our technology remains intelligent, adaptive, and impactful. I envision a future where AI enhances decision-making and streamlines complex processes, making automation more efficient, reliable, and accessible. Let's push the boundaries of AI and redefine how businesses operate.",
     icon: Briefcase,
-    type: "work"
+    type: "work",
   },
   {
     year: "2024",
@@ -32,7 +34,7 @@ const journeyItems = [
     description:
       "Recognized for contributions to API development and for earning the Postman API Fundamentals badge, showcasing expertise in building and testing efficient APIs.",
     icon: Award,
-    type: "achievement"
+    type: "achievement",
   },
   {
     year: "2023 - present",
@@ -55,8 +57,14 @@ export default function Journey() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="journey" className="py-20 px-4 bg-muted/50">
-      <div className="container max-w-6xl mx-auto">
+    <section id="journey" className="py-16 px-4 bg-secondary/20 w-full">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="container w-full max-w-6xl mx-auto"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +152,7 @@ export default function Journey() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

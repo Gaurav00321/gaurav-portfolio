@@ -50,9 +50,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center pt-16 pb-8 px-4"
+      className="min-h-screen flex flex-col justify-center items-center pt-16 pb-8 px-4 w-full overflow-x-hidden"
     >
-      <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+      <div className="container w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

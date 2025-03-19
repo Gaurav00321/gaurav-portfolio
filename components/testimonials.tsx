@@ -143,14 +143,10 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0">
-                  <Card className="border-none shadow-lg bg-background/60 backdrop-blur-sm rounded-none md:rounded-lg mx-0">
+                  <Card className="border-none shadow-lg bg-background/60 backdrop-blur-sm rounded-lg mx-2 md:mx-0">
                     <CardContent className="p-4 md:p-8">
-                      <Quote className="h-6 w-6 md:h-8 md:w-8 text-primary/20 mb-3 md:mb-4" />
-                      <p className="text-sm md:text-lg leading-relaxed mb-6 line-clamp-4 md:line-clamp-none">
-                        "{testimonial.content}"
-                      </p>
-                      <div className="flex items-center pt-3 border-t border-border/50">
-                        <Avatar className="h-10 w-10 md:h-12 md:w-12 mr-3">
+                      <div className="flex items-start gap-3">
+                        <Avatar className="h-10 w-10 md:h-12 md:w-12 flex-shrink-0">
                           <AvatarImage
                             src={testimonial.image}
                             alt={testimonial.name}
@@ -159,12 +155,16 @@ export default function Testimonials() {
                             {testimonial.name.charAt(0)}
                           </AvatarFallback>
                         </Avatar>
-                        <div className="min-w-0">
+                        <div className="flex-1 min-w-0">
                           <h4 className="font-semibold text-sm md:text-base truncate">
                             {testimonial.name}
                           </h4>
-                          <p className="text-xs md:text-sm text-muted-foreground truncate">
+                          <p className="text-xs md:text-sm text-muted-foreground truncate mb-2">
                             {testimonial.role}
+                          </p>
+                          <Quote className="h-4 w-4 text-primary/20 mb-1" />
+                          <p className="text-sm md:text-base leading-relaxed line-clamp-3 md:line-clamp-none">
+                            "{testimonial.content}"
                           </p>
                         </div>
                       </div>

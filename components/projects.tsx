@@ -49,8 +49,8 @@ const projects = [
     image: "/Portfolio-image.png?height=600&width=800",
     tags: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
     category: "frontend",
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://gaurav-portfolio-chi.vercel.app/",
+    githubUrl: "https://github.com/Gaurav00321/gaurav-portfolio",
     details:
       "This portfolio website showcases creative work through an immersive user experience. Features include 3D model viewers using Three.js, smooth page transitions with Framer Motion, responsive design with Tailwind CSS, and a custom-built contact form with validation.",
   },

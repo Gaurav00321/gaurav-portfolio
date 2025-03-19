@@ -50,13 +50,16 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-secondary/5">
+    <section
+      id="about"
+      className="py-16 px-4 bg-secondary/20 w-full overflow-x-hidden"
+    >
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="container max-w-6xl mx-auto"
+        className="container w-full max-w-6xl mx-auto px-4 md:px-6 lg:px-8"
       >
         <AnimatedSection
           type="fade"
