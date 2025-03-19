@@ -70,7 +70,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <Button size="lg" className="px-4 py-2 h-auto" asChild>
               <a
-                href="https://drive.google.com/file/d/1VuJwX2qEYcfjUu1kv1tyOsZyLQt1Qxq7/view"
+                href="https://drive.google.com/file/d/1IppqsfU2pQm3xFILf-Zg-iOW6iYUhD6v/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
