@@ -6,10 +6,8 @@ Allow: /
 Sitemap: https://gauravupadhyay.vercel.app/sitemap.xml
 
 # Disallow admin and private areas
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
 Disallow: /_next/
+Disallow: /api/
 
 # Crawl-delay for all bots
 Crawl-delay: 10 
