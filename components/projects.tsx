@@ -49,7 +49,7 @@ const projects = [
     image: "/Portfolio-image.png?height=600&width=800",
     tags: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
     category: "frontend",
-    demoUrl: "https://gaurav-portfolio-chi.vercel.app/",
+    demoUrl: "https://gauravupadhyay.vercel.app/",
     githubUrl: "https://github.com/Gaurav00321/gaurav-portfolio",
     details:
       "This portfolio website showcases creative work through an immersive user experience. Features include 3D model viewers using Three.js, smooth page transitions with Framer Motion, responsive design with Tailwind CSS, and a custom-built contact form with validation.",
@@ -61,7 +61,7 @@ const projects = [
     image: "/3D_Teams.png?height=600&width=800",
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3"],
     category: "frontend",
-    demoUrl: "#",
+    demoUrl: "https://3d-teams.vercel.app",
     githubUrl: "https://github.com/Gaurav00321/3D-Teams",
     details:
       "A flexible headless CMS that allows content creators to manage digital content through a user-friendly interface. Features include content modeling with custom fields, role-based access control, RESTful and GraphQL APIs for content delivery, media management, and versioning system for content changes.",
