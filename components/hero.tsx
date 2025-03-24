@@ -2,10 +2,11 @@
 
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown, Download, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Hero() {
   const { theme } = useTheme();
@@ -68,15 +69,14 @@ export default function Hero() {
             AI solutions that drive innovation and efficiency.
           </p>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-            <Button size="lg" className="px-4 py-2 h-auto" asChild>
-              <a
-                href="https://drive.google.com/file/d/1IppqsfU2pQm3xFILf-Zg-iOW6iYUhD6v/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Download className="h-4 w-4" />
-                Download Resume
+            <Button
+              size="lg"
+              className="px-4 py-2 h-auto flex items-center gap-2"
+              asChild
+            >
+              <a href="#projects">
+                Explore My Work
+                <Globe className="h-4 w-4" />
               </a>
             </Button>
             <Button
@@ -105,10 +105,13 @@ export default function Hero() {
             )}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
-            <img
-              src="/Gaurav.png?height=400&width=400"
-              alt="Gaurav's Profile"
+            <Image
+              src="/Gaurav.png"
+              alt="Gaurav Upadhyay - AI Research Engineer & Full Stack Developer"
+              width={320}
+              height={320}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
         </motion.div>

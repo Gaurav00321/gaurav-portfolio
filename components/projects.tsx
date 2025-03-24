@@ -15,9 +15,11 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
+  DialogFooter,
 } from "@/components/ui/dialog";
 import AnimatedSection from "@/components/ui/animated-section";
 import { staggerContainer } from "@/lib/animation";
+import Image from "next/image";
 
 const projects = [
   {
@@ -39,7 +41,7 @@ const projects = [
     demoUrl: "#",
     githubUrl: "#",
     details:
-      "ThinkFlowGPT is an AI-powered innovation designed to redefine automation and intelligent decision-making. Built with cutting-edge machine learning and natural language processing, it streamlines complex workflows, optimizes efficiency, and empowers businesses to scale effortlessly. ThinkFlowGPT isn’t just an AI tool—it’s a vision for the future, where automation adapts, learns, and enhances productivity without replacing human ingenuity.",
+      "ThinkFlowGPT is an AI-powered innovation designed to redefine automation and intelligent decision-making. Built with cutting-edge machine learning and natural language processing, it streamlines complex workflows, optimizes efficiency, and empowers businesses to scale effortlessly. ThinkFlowGPT isn't just an AI tool—it's a vision for the future, where automation adapts, learns, and enhances productivity without replacing human ingenuity.",
   },
   {
     id: 2,
@@ -64,7 +66,7 @@ const projects = [
     demoUrl: "https://3d-teams.vercel.app",
     githubUrl: "https://github.com/Gaurav00321/3D-Teams",
     details:
-      "A flexible headless CMS that allows content creators to manage digital content through a user-friendly interface. Features include content modeling with custom fields, role-based access control, RESTful and GraphQL APIs for content delivery, media management, and versioning system for content changes.",
+      "3D Teams is a premium web service dedicated to building stunning, interactive 3D websites for companies and customers. We specialize in crafting immersive digital experiences that blend cutting-edge 3D design, animation, and web development to elevate brands and captivate audiences. Our team ensures seamless performance, responsiveness, and customization, delivering visually striking websites that stand out in the digital landscape. ",
   },
   {
     id: 4,
@@ -148,7 +150,7 @@ export default function Projects() {
                 <div className="relative aspect-video cursor-pointer">
                   <img
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={`${project.title} - Project Screenshot`}
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -163,59 +165,45 @@ export default function Projects() {
                         <Maximize2 className="h-4 w-4" />
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-hidden">
-                      <DialogHeader className="pb-4 mb-4 border-b relative">
-                        <DialogTitle className="text-2xl font-bold pr-12">
-                          {project.title}
-                        </DialogTitle>
+                    <DialogContent className="max-w-4xl">
+                      <DialogHeader>
+                        <DialogTitle>{project.title}</DialogTitle>
+                        <DialogDescription>
+                          {project.description}
+                        </DialogDescription>
                       </DialogHeader>
-                      <div className="space-y-6 overflow-y-scroll dialog-scrollbar pr-6 max-h-[calc(90vh-8rem)]">
-                        <img
-                          src={project.image || "/placeholder.svg"}
-                          alt={project.title}
-                          className="w-full aspect-video object-cover rounded-lg"
+                      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} - Project Screenshot`}
+                          fill
+                          className="object-cover"
+                          priority
                         />
-                        <div className="space-y-4">
-                          <p className="text-muted-foreground">
-                            {project.details || project.description}
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag) => (
-                              <Badge
-                                key={tag}
-                                variant="secondary"
-                                className="bg-primary/10 text-primary hover:bg-primary/20"
-                              >
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                          <div className="flex flex-wrap gap-4 pt-4">
-                            <Button asChild>
-                              <a
-                                href={project.demoUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2"
-                              >
-                                <ExternalLink className="h-4 w-4" />
-                                View Live Demo
-                              </a>
-                            </Button>
-                            <Button variant="outline" asChild>
-                              <a
-                                href={project.githubUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2"
-                              >
-                                <Github className="h-4 w-4" />
-                                View Code
-                              </a>
-                            </Button>
-                          </div>
-                        </div>
                       </div>
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-semibold">
+                          Technologies Used
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <Badge key={tag} variant="secondary">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                        <h3 className="text-xl font-semibold">Key Features</h3>
+                        <ul className="list-disc pl-6 space-y-2">
+                          {project.details.split(". ").map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <DialogFooter>
+                        <DialogClose asChild>
+                          <Button variant="outline">Close</Button>
+                        </DialogClose>
+                      </DialogFooter>
                     </DialogContent>
                   </Dialog>
                 </div>

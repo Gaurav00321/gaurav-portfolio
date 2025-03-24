@@ -9,23 +9,27 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gauravupadhyay.vercel.app"),
   title: "Gaurav Upadhyay | AI Research Engineer & Full Stack Developer",
   description:
-    "Gaurav Upadhyay is the Founder of ThinkFlowGPT and Co-founder at amTop, specializing in AI research, front-end development, and automation. Expert in AI-driven workflow automation and scalable software solutions.",
-  metadataBase: new URL("https://gauravupadhyay.vercel.app"),
-  keywords:
-    "Gaurav, Gaurav Upadhyay, AI Research Engineer, Full Stack Developer, ThinkFlowGPT, amTop, AI Automation, Software Development, Frontend Development, AI Solutions, Machine Learning, Web Development, Portfolio, Indian Developer, Tech Entrepreneur",
-  authors: [{ name: "Gaurav Upadhyay" }],
-  creator: "Gaurav Upadhyay",
-  publisher: "Gaurav Upadhyay",
-  robots:
-    "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  category: "technology",
-  classification: "business",
-  referrer: "origin-when-cross-origin",
+    "Gaurav Upadhyay is an AI Research Engineer and Full Stack Developer, Founder of ThinkFlowGPT, and Co-founder at amTop. Specializing in AI research, front-end development, and automation.",
+  keywords: [
+    "AI Research Engineer",
+    "Full Stack Developer",
+    "Machine Learning",
+    "Web Development",
+    "Portfolio",
+    "ThinkFlowGPT",
+    "amTop",
+  ],
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  themeColor: "#000000",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Gaurav Upadhyay Portfolio",
+  },
   formatDetection: {
-    email: false,
-    address: false,
     telephone: false,
   },
   icons: {
@@ -33,7 +37,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -124,12 +127,17 @@ export default function RootLayout({
                 "Software Engineering",
                 "Machine Learning",
                 "Web Development",
+                "TypeScript",
+                "React",
+                "Next.js",
+                "Python",
+                "Node.js",
               ],
               nationality: "Indian",
               alumniOf: {
                 "@type": "CollegeOrUniversity",
-                name: "Your University Name",
-                sameAs: "https://your-university-website.com",
+                name: "Parul University",
+                sameAs: "https://paruluniversity.ac.in",
               },
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
@@ -166,6 +174,19 @@ export default function RootLayout({
                     },
                   },
                 ],
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Vadodara",
+                addressRegion: "Gujarat",
+                addressCountry: "IN",
+                streetAddress: "Vadodara, Gujarat, India",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "email",
+                email: "gauravupadhyay.career@gmail.com",
+                telephone: "+91 7275742642",
               },
             }),
           }}
