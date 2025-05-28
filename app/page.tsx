@@ -12,8 +12,8 @@ export default function Home() {
       <BackgroundSwitcher />
       <Hero />
       <About />
-      <Journey />
       <Projects />
+      <Journey />
       <Testimonials />
       <Contact />
     </main>

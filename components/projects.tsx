@@ -176,14 +176,14 @@ export default function Projects() {
                       </DialogHeader>
 
                       <div className="overflow-y-auto max-h-[70vh] scrollbar-thin scrollbar-thumb-secondary scrollbar-track-secondary/20 pr-2">
-                        <div className="relative w-full h-[200px] sm:h-[250px] overflow-hidden rounded-lg mb-4 bg-secondary/10">
-                          <Image
+                        <div className="relative w-full h-[200px] sm:h-[250px] overflow-hidden rounded-lg mb-4 bg-secondary/10">                          <Image
                             src={project.image}
                             alt={`${project.title} - Project Screenshot`}
                             fill
                             sizes="(max-width: 768px) 100vw, 800px"
                             className="object-fill"
                             priority
+                            unoptimized={project.image.endsWith('.gif')}
                           />
                         </div>
 
