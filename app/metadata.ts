@@ -1,9 +1,8 @@
 import { Metadata } from 'next'
 
-export const siteConfig = {
-  name: "Gaurav Upadhyay",
-  title: "Gaurav Upadhyay - AI/ML Engineer & Founder of ThinkFlowGPT",
-  description: "Gaurav Upadhyay is an experienced AI/ML Engineer and the founder of ThinkFlowGPT, specializing in artificial intelligence, machine learning, and workflow automation solutions.",
+export const siteConfig = {  name: "Gaurav Upadhyay",
+  title: "Gaurav Upadhyay - Founder of ThinkFlowGPT",
+  description: "Gaurav Upadhyay is the founder of ThinkFlowGPT, pioneering AI-driven workflow automation solutions that transform how businesses operate and scale their processes.",
   url: "https://gauravupadhyay.vercel.app",
   ogImage: "/Gaurav.png",
   links: {
@@ -20,6 +19,7 @@ export const defaultMetadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Gaurav Upadhyay",
+    "Founder of ThinkFlowGPT",
     "ThinkFlowGPT",
     "AI Engineer",
     "Machine Learning Engineer",
@@ -69,9 +69,6 @@ export const defaultMetadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification code
   },
   alternates: {
     canonical: siteConfig.url,

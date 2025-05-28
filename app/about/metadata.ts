@@ -1,14 +1,12 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About Gaurav Upadhyay | AI Research Engineer & Full Stack Developer",
+export const metadata: Metadata = {  title: "About Gaurav Upadhyay | Founder of ThinkFlowGPT",
   description:
-    "Learn about Gaurav Upadhyay's journey in AI research and full-stack development. Founder of ThinkFlowGPT and Co-founder at amTop, specializing in AI-driven solutions.",
+    "Learn about Gaurav Upadhyay's journey as the Founder of ThinkFlowGPT, developing AI-driven workflow automation solutions and transforming business processes.",
   openGraph: {
-    title:
-      "About Gaurav Upadhyay | AI Research Engineer & Full Stack Developer",
+    title: "About Gaurav Upadhyay | Founder of ThinkFlowGPT",
     description:
-      "Learn about Gaurav Upadhyay's journey in AI research and full-stack development. Founder of ThinkFlowGPT and Co-founder at amTop.",
+      "Learn about Gaurav Upadhyay's journey as the Founder of ThinkFlowGPT, developing AI-driven workflow automation solutions and transforming business processes.",
     images: ["/Gaurav.png"],
   },
 };

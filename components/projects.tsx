@@ -66,7 +66,7 @@ const projects = [
     demoUrl: "https://3d-teams.vercel.app",
     githubUrl: "https://github.com/Gaurav00321/3D-Teams",
     details:
-      "3D Teams is a premium web service dedicated to building stunning, interactive 3D websites for companies and customers. We specialize in crafting immersive digital experiences that blend cutting-edge 3D design, animation, and web development to elevate brands and captivate audiences. Our team ensures seamless performance, responsiveness, and customization, delivering visually striking websites that stand out in the digital landscape. ",
+      "3D Teams is a premium web service dedicated to building stunning, interactive 3D websites for companies and customers. We specialize in crafting immersive digital experiences that blend cutting-edge 3D design, animation, and web development to elevate brands and captivate audiences. Our team ensures seamless performance, responsiveness, and customization, delivering visually striking websites that stand out in the digital landscape.",
   },
   {
     id: 4,
@@ -105,9 +105,8 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
     category: "frontend",
     demoUrl: "https://gaurav00321.github.io/tic-tac-toeJS/",
-    githubUrl: "https://github.com/Gaurav00321/tic-tac-toeJS",
-    details:
-      "This weather dashboard provides users with current conditions and forecasts based on their location. Features include current weather conditions, 5-day forecast, historical weather data visualization with Chart.js, location search functionality, and responsive design for all devices.",
+    githubUrl: "https://github.com/Gaurav00321/tic-tac-toeJS",    details:
+      "A classic Tic Tac Toe game with a modern interface. Features include a responsive game board, interactive gameplay with X and O markers, turn tracking, win/draw detection, score tracking, and a clean minimalist design. The game includes visual feedback for winning combinations and a restart option for continuous play.",
   },
 ];
 

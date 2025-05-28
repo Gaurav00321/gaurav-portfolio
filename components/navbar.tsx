@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Journey", href: "#journey" },
   { name: "Projects", href: "#projects" },
+  { name: "Journey", href: "#journey" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
@@ -55,9 +55,8 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              key={link.name}              href={link.href}
+              className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.name}
             </Link>
@@ -112,9 +111,8 @@ export default function Navbar() {
           <nav className="container py-6 flex flex-col space-y-6">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
-                href={link.href}
-                className="text-base font-medium transition-colors hover:text-primary py-2 px-4 rounded-md hover:bg-muted/50"
+                key={link.name}                href={link.href}
+                className="text-base font-medium transition-all duration-300 hover:text-primary py-2 px-4 rounded-md relative overflow-hidden after:absolute after:inset-0 after:z-[-1] after:bg-primary/10 after:translate-x-[-100%] hover:after:translate-x-0 after:transition-transform after:duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
