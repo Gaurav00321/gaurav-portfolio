@@ -69,15 +69,10 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             <p className="text-lg text-muted-foreground">
-              I'm a passionate AI researcher and full-stack engineer, dedicated
-              to pushing the boundaries of technology. As the Founder of
-              ThinkFlowGPT and Co-founder at amTop, I blend cutting-edge AI
-              innovation with exceptional user experiences.
+              Gaurav Upadhyay is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation. A passionate software developer and AI enthusiast, he is dedicated to building innovative, user-centric solutions.
             </p>
             <p className="text-lg text-muted-foreground">
-              My journey in technology is driven by a relentless pursuit of
-              excellence and innovation. I specialize in creating intelligent,
-              scalable solutions that make a real impact in the digital world.
+              Currently pursuing an Integrated Master’s in AI (IMCA) at Parul University, he has expertise in DSA, Java, C++, Python, React.js, Next.js, TypeScript, and DBMS. Specializing in AI-driven development, full-stack programming, and distributed computing, he actively explores robotic AI, neural networks, and operating systems.
             </p>
           </div>
         </AnimatedSection>

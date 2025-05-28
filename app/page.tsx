@@ -5,7 +5,6 @@ import Projects from "@/components/projects";
 import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
 import BackgroundSwitcher from "@/components/background-switcher";
-import Footer from "@/components/footer";
 
 export default function Home() {
   return (

@@ -151,7 +151,7 @@ export default function Projects() {
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={`${project.title} - Project Screenshot`}
-                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -167,42 +167,86 @@ export default function Projects() {
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl">
                       <DialogHeader>
-                        <DialogTitle>{project.title}</DialogTitle>
-                        <DialogDescription>
+                        <DialogTitle className="text-xl font-bold">
+                          {project.title}
+                        </DialogTitle>
+                        <DialogDescription className="text-sm text-muted-foreground">
                           {project.description}
                         </DialogDescription>
                       </DialogHeader>
-                      <div className="relative aspect-video w-full overflow-hidden rounded-lg">
-                        <Image
-                          src={project.image}
-                          alt={`${project.title} - Project Screenshot`}
-                          fill
-                          className="object-cover"
-                          priority
-                        />
-                      </div>
-                      <div className="space-y-4">
-                        <h3 className="text-xl font-semibold">
-                          Technologies Used
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary">
-                              {tag}
-                            </Badge>
-                          ))}
+
+                      <div className="overflow-y-auto max-h-[70vh] scrollbar-thin scrollbar-thumb-secondary scrollbar-track-secondary/20 pr-2">
+                        <div className="relative w-full h-[200px] sm:h-[250px] overflow-hidden rounded-lg mb-4 bg-secondary/10">
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} - Project Screenshot`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 800px"
+                            className="object-fill"
+                            priority
+                          />
                         </div>
-                        <h3 className="text-xl font-semibold">Key Features</h3>
-                        <ul className="list-disc pl-6 space-y-2">
-                          {project.details.split(". ").map((feature, index) => (
-                            <li key={index}>{feature}</li>
-                          ))}
-                        </ul>
+
+                        <div className="space-y-4">
+                          <div>
+                            <h3 className="text-lg font-semibold mb-2">
+                              Technologies Used
+                            </h3>
+                            <div className="flex flex-wrap gap-2">
+                              {project.tags.map((tag) => (
+                                <Badge key={tag} variant="secondary">
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div>
+                            <h3 className="text-lg font-semibold mb-2">
+                              Key Features
+                            </h3>
+                            <ul className="list-disc pl-6 space-y-2 text-sm text-muted-foreground">
+                              {project.details.split(". ").map((feature, index) => (
+                                <li key={index}>{feature}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                      <DialogFooter>
-                        <DialogClose asChild>
-                          <Button variant="outline">Close</Button>
-                        </DialogClose>
+
+                      <DialogFooter className="mt-4">
+                        <div className="flex gap-2 w-full justify-end">
+                          {project.demoUrl && (
+                            <Button asChild variant="default">
+                              <a
+                                href={project.demoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="h-4 w-4 mr-2" />
+                                Demo
+                              </a>
+                            </Button>
+                          )}
+                          {project.githubUrl && (
+                            <Button asChild variant="outline">
+                              <a
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Github className="h-4 w-4 mr-2" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
+                          <DialogClose asChild>
+                            <Button variant="outline">
+                              <X className="h-4 w-4 mr-2" />
+                              Close
+                            </Button>
+                          </DialogClose>
+                        </div>
                       </DialogFooter>
                     </DialogContent>
                   </Dialog>
