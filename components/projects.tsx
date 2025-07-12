@@ -38,8 +38,8 @@ const projects = [
       "Fine-tuning",
     ],
     category: "fullstack",
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://thinkflowgpt.vercel.app",
+    githubUrl: "https://github.com/Gaurav00321/thinkflow-gpt",
     details:
       "ThinkFlowGPT is an AI-powered innovation designed to redefine automation and intelligent decision-making. Built with cutting-edge machine learning and natural language processing, it streamlines complex workflows, optimizes efficiency, and empowers businesses to scale effortlessly. ThinkFlowGPT isn't just an AI tool—it's a vision for the future, where automation adapts, learns, and enhances productivity without replacing human ingenuity.",
   },
