@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Download, ChevronRight } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -55,7 +56,8 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
-              key={link.name}              href={link.href}
+              key={link.name}
+              href={link.href}
               className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.name}
@@ -73,9 +75,14 @@ export default function Navbar() {
               <Moon className="h-5 w-5" />
             )}
           </Button>
+          <Link href={"https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing"} target="_blank">
+          <Button variant="outline" className="flex items-center gap-2">
+            <Download className="h-4 w-4" /> Resume
+          </Button>
+          </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu */}
         <div className="flex items-center md:hidden">
           <Button
             variant="ghost"
@@ -90,37 +97,52 @@ export default function Navbar() {
               <Moon className="h-5 w-5" />
             )}
           </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[80vw] sm:w-[350px] p-0">
+              <SheetHeader className="p-6 border-b">
+                <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
+                  Menu
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col p-6">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="group flex items-center justify-between text-lg font-medium transition-colors hover:text-primary py-4 border-b border-border/50 last:border-none"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                    <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </Link>
+                ))}
+                <Button 
+                  variant="default" 
+                  className="flex items-center gap-2 mt-6 w-full text-lg h-12"
+                  asChild
+                >
+                  <a href="https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing" target="_blank" download>
+                    <Download className="h-5 w-5" /> Download Resume
+                  </a>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md shadow-lg absolute w-full">
-          <nav className="container py-6 flex flex-col space-y-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}                href={link.href}
-                className="text-base font-medium transition-all duration-300 hover:text-primary py-2 px-4 rounded-md relative overflow-hidden after:absolute after:inset-0 after:z-[-1] after:bg-primary/10 after:translate-x-[-100%] hover:after:translate-x-0 after:transition-transform after:duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
     </header>
   );
 }

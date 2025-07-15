@@ -12,7 +12,7 @@ const testimonials = [
     id: 1,
     name: "Amarnath Pandey",
     role: "Chief Executive Officer at amTop",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/amarnath-pandey.png?height=100&width=100",
     content:
       "Working with Gaurav was an absolute pleasure. His technical expertise and attention to detail resulted in a product that exceeded our expectations. He was responsive, proactive, and delivered on time.",
   },
@@ -20,15 +20,15 @@ const testimonials = [
     id: 2,
     name: "Anant Dubey",
     role: "COO at amTop",
-    image: "/placeholder.svg?height=100&width=100",
+    image: "/anant-dubey.png?height=100&width=100",
     content:
       "Gaurav is one of the most talented developers I've worked with. His ability to understand complex requirements and translate them into elegant solutions is remarkable. He's a valuable asset to any team.",
   },
   {
     id: 3,
     name: "Manthan Jain",
-    role: "Software Developer at 3D Teams ",
-    image: "/placeholder.svg?height=100&width=100",
+    role: "Software Developer at amTop ",
+    image: "/manthan-jain.png?height=100&width=100",
     content:
       "As a designer, I appreciate developers who can bring my designs to life exactly as envisioned. Gaurav did that and more, adding thoughtful interactions that enhanced the user experience.",
   },

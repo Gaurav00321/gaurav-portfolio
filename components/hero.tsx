@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Globe } from "lucide-react";
+import { ArrowDown, Download, Globe, Search, Code, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
@@ -60,33 +60,59 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-center md:text-left order-2 md:order-1"
         >
+          <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+            <span className="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+              SEO Expert
+            </span>
+            <span className="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+              Web Developer
+            </span>
+          </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            <span className="block">Building the Future</span>
-            <span className="block text-primary">with Code & Creativity</span>
+            <span className="block">Crafting Digital</span>
+            <span className="block text-primary">Success Stories</span>
           </h1>
           <p className="text-base md:text-xl text-muted-foreground mb-6 max-w-lg mx-auto md:mx-0">
-            Founder of ThinkFlowGPT and Co-founder at amTop, building scalable
-            AI solutions that drive innovation and efficiency.
+            SEO strategist and full-stack developer helping businesses achieve
+            higher rankings and exceptional user experiences through optimized,
+            performant web solutions.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+          <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start mb-8">
             <Button
               size="lg"
-              className="px-4 py-2 h-auto flex items-center gap-2"
+              className="px-6 py-3 h-auto flex items-center gap-2 text-lg"
               asChild
             >
               <a href="#projects">
-                Explore My Work
-                <Globe className="h-4 w-4" />
+                View Portfolio
+                <Rocket className="h-5 w-5" />
               </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="px-4 py-2 h-auto"
+              className="px-6 py-3 h-auto flex items-center gap-2 text-lg group"
               asChild
             >
-              <a href="#contact">Contact Me</a>
+              <a href="https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing" target="_blank">
+                Download Resume
+                <Download className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+              </a>
             </Button>
+          </div>
+          <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto md:mx-0">
+            <div className="flex flex-col items-center p-4 rounded-lg bg-card">
+              <Search className="h-6 w-6 text-primary mb-2" />
+              <span className="text-sm font-medium">SEO</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg bg-card">
+              <Code className="h-6 w-6 text-primary mb-2" />
+              <span className="text-sm font-medium">Development</span>
+            </div>
+            <div className="flex flex-col items-center p-4 rounded-lg bg-card">
+              <Globe className="h-6 w-6 text-primary mb-2" />
+              <span className="text-sm font-medium">Analytics</span>
+            </div>
           </div>
         </motion.div>
 
@@ -98,19 +124,13 @@ export default function Hero() {
         >
           <div
             ref={profileRef}
-            className={cn(
-              "relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden transition-all duration-200",
-              "border-4 shadow-xl",
-              theme === "dark" ? "border-primary/20" : "border-primary/10"
-            )}
+            className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
             <Image
               src="/Gaurav.png"
-              alt="Gaurav Upadhyay - AI Research Engineer & Full Stack Developer"
-              width={320}
-              height={320}
-              className="w-full h-full object-cover"
+              alt="Gaurav's Profile"
+              fill
+              className="object-cover"
               priority
             />
           </div>
@@ -118,21 +138,21 @@ export default function Hero() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="mt-16 animate-bounce"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+        <Button
+          variant="ghost"
+          size="icon"
+          aria-label="Scroll down"
+          asChild
         >
-          <Button variant="ghost" size="icon" asChild>
-            <a href="#about" aria-label="Scroll down">
-              <ArrowDown className="h-6 w-6" />
-            </a>
-          </Button>
-        </motion.div>
+          <a href="#about">
+            <ArrowDown className="h-6 w-6" />
+          </a>
+        </Button>
       </motion.div>
     </section>
   );

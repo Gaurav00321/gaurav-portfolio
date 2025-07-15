@@ -9,6 +9,15 @@ import AnimatedSection from "@/components/ui/animated-section";
 import { staggerContainer } from "@/lib/animation";
 
 const journeyItems = [
+    {
+    year: "2025 - Present",
+    title: "Creator",
+    organization: "AetherOS",
+    description:
+      "At AetherOS, my mission is to build an AI-powered operating system from scratch—where intelligence is native, voice-driven interaction is standard, and the system learns continuously. I envision a future where operating systems understand intent, automate proactively, and adapt to user behavior in real-time. Let’s reimagine computing with AI at the core, making it more personal, powerful, and human.",
+    icon: Briefcase,
+    type: "work",
+  },
   {
     year: "2025 - Present",
     title: "Chief Scientist",

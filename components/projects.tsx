@@ -21,7 +21,20 @@ import AnimatedSection from "@/components/ui/animated-section";
 import { staggerContainer } from "@/lib/animation";
 import Image from "next/image";
 
-const projects = [
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  dialogImage?: string;
+  tags: string[];
+  category: string;
+  demoUrl: string;
+  githubUrl: string;
+  details: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: "ThinkFlowGPT",
@@ -60,7 +73,8 @@ const projects = [
     id: 3,
     title: "3D Teams",
     description: "A 3D team management system built using Three.js and React.",
-    image: "/3D_Teams.png?height=600&width=800",
+    image: "/3D_Teams.png",
+    dialogImage: "/3D_Teams.png", // Adding a high-quality image for dialog
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3"],
     category: "frontend",
     demoUrl: "https://3d-teams.vercel.app",
@@ -91,7 +105,7 @@ const projects = [
     image: "/clothSimulation.gif?height=600&width=800",
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3", "Physics"],
     category: "frontend",
-    demoUrl: "https://gaurav00321.github.io/3D-ClothSimulation/",
+    demoUrl: "https://gaurav00321.github.io/3D-ClothSimulation",
     githubUrl: "https://github.com/Gaurav00321/3D-ClothSimulation",
     details:
       "The simulation replicates realistic cloth behavior such as deformation, stretching, and interaction with external forces. The project leverages physics-based principles, specifically Verlet integration, to model the behavior of cloth under gravity and user interaction.",
@@ -175,12 +189,13 @@ export default function Projects() {
                       </DialogHeader>
 
                       <div className="overflow-y-auto max-h-[70vh] scrollbar-thin scrollbar-thumb-secondary scrollbar-track-secondary/20 pr-2">
-                        <div className="relative w-full h-[200px] sm:h-[250px] overflow-hidden rounded-lg mb-4 bg-secondary/10">                          <Image
-                            src={project.image}
+                        <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4 bg-secondary/10">
+                          <Image
+                            src={project.dialogImage || project.image}
                             alt={`${project.title} - Project Screenshot`}
                             fill
                             sizes="(max-width: 768px) 100vw, 800px"
-                            className="object-fill"
+                            className="object-contain"
                             priority
                             unoptimized={project.image.endsWith('.gif')}
                           />
