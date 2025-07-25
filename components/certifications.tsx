@@ -4,59 +4,46 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, GraduationCap, Award, Calendar } from "lucide-react";
+import { Award, Calendar } from "lucide-react";
 import AnimatedSection from "@/components/ui/animated-section";
 import { staggerContainer } from "@/lib/animation";
 
-const journeyItems = [
-    {
-    year: "2025 - Present",
-    title: "Creator",
-    organization: "AetherOS",
-    description:
-      "At AetherOS, my mission is to build an AI-powered operating system from scratch—where intelligence is native, voice-driven interaction is standard, and the system learns continuously. I envision a future where operating systems understand intent, automate proactively, and adapt to user behavior in real-time. Let’s reimagine computing with AI at the core, making it more personal, powerful, and human.",
-    icon: Briefcase,
-    type: "work",
-  },
-  {
-    year: "2025 - Present",
-    title: "Chief Scientist",
-    organization: "amTop Inc.",
-    description:
-      "At amTop, my mission is to advance AI research and engineering, ensuring our technology remains cutting-edge and impactful. I believe in a future where AI seamlessly integrates with human decision-making, optimizing complex problem-solving while maintaining reliability and responsibility. Let's push the limits of AI and redefine what's possible.",
-    icon: Briefcase,
-    type: "work",
-  },
-  {
-    year: "2025 - Present",
-    title: "Founder",
-    organization: "ThinkFLowGPT.",
-    description:
-      "At ThinkFlowGPT, my mission is to advance AI-driven workflow automation, ensuring our technology remains intelligent, adaptive, and impactful. I envision a future where AI enhances decision-making and streamlines complex processes, making automation more efficient, reliable, and accessible. Let's push the boundaries of AI and redefine how businesses operate.",
-    icon: Briefcase,
-    type: "work",
-  },
+const certifications = [
   {
     year: "2024",
-    title: "Student Expert Badge",
-    organization: "Postman API",
+    title: "AWS Certified Solutions Architect – Associate",
+    issuer: "Amazon Web Services",
     description:
-      "Recognized for contributions to API development and for earning the Postman API Fundamentals badge, showcasing expertise in building and testing efficient APIs.",
+      "Validated expertise in designing and deploying scalable systems on AWS, with a focus on security, reliability, and best practices.",
     icon: Award,
-    type: "achievement",
   },
   {
-    year: "2023 - present",
-    title: "Integrated Master's in Computer Science - AI",
-    organization: "Parul University",
+    year: "2023",
+    title: "Google Cloud Professional Data Engineer",
+    issuer: "Google Cloud",
     description:
-      "Currently pursuing an Integrated Master of Computer Applications (IMCA) – AI, specializing in Artificial Intelligence, Software Engineering, and Human-Computer Interaction.",
-    icon: GraduationCap,
-    type: "education",
+      "Demonstrated ability to design, build, operationalize, secure, and monitor data processing systems on Google Cloud Platform.",
+    icon: Award,
+  },
+  {
+    year: "2022",
+    title: "Microsoft Certified: Azure AI Engineer Associate",
+    issuer: "Microsoft",
+    description:
+      "Proven skills in using Azure AI services, including natural language processing, computer vision, and conversational AI.",
+    icon: Award,
+  },
+  {
+    year: "2021",
+    title: "Postman Student Expert",
+    issuer: "Postman",
+    description:
+      "Recognized for proficiency in API development, testing, and automation using Postman tools.",
+    icon: Award,
   },
 ];
 
-export default function Journey() {
+export default function Certifications() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -66,7 +53,7 @@ export default function Journey() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="journey" aria-labelledby="journey-heading" className="py-16 px-4 bg-secondary/20 w-full">
+    <section id="certifications" aria-labelledby="certifications-heading" className="py-16 px-4 bg-background w-full">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -81,11 +68,10 @@ export default function Journey() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 id="journey-heading" className="text-3xl md:text-4xl font-bold mb-4">My Journey</h2>
+          <h2 id="certifications-heading" className="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore my professional path and key milestones that have shaped my
-            career in technology.
+            A showcase of my professional certifications, demonstrating my commitment to continuous learning and expertise in technology. <a href="#projects" className="underline text-primary font-medium">See related AI and web projects</a>.
           </p>
         </motion.div>
 
@@ -100,7 +86,7 @@ export default function Journey() {
 
           {/* Timeline items */}
           <div className="space-y-12">
-            {journeyItems.map((item, index) => (
+            {certifications.map((cert, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -110,6 +96,8 @@ export default function Journey() {
                 className={`flex flex-col md:flex-row items-center ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 } relative z-10`}
+                itemScope
+                itemType="https://schema.org/EducationalOccupationalCredential"
               >
                 {/* Content for mobile (always full width) and desktop (alternating) */}
                 <div
@@ -124,25 +112,17 @@ export default function Journey() {
                       <div className="flex items-center gap-2 mb-2 justify-start md:justify-start">
                         <Calendar className="h-4 w-4 text-muted-foreground" />
                         <span className="text-sm text-muted-foreground">
-                          {item.year}
+                          {cert.year}
                         </span>
                       </div>
-                      <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                      <p className="text-muted-foreground mb-3">
-                        {item.organization}
-                      </p>
-                      <p className="text-sm">{item.description}</p>
+                      <h3 className="text-xl font-bold mb-1" itemProp="name">{cert.title}</h3>
+                      <p className="text-muted-foreground mb-3" itemProp="issuer">{cert.issuer}</p>
+                      <p className="text-sm" itemProp="description">{cert.description}</p>
                       <Badge
                         variant="outline"
-                        className={`mt-4 ${
-                          item.type === "work"
-                            ? "bg-blue-500/10 text-blue-500"
-                            : item.type === "education"
-                            ? "bg-green-500/10 text-green-500"
-                            : "bg-amber-500/10 text-amber-500"
-                        }`}
+                        className="mt-4 bg-amber-500/10 text-amber-500"
                       >
-                        {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                        Certification
                       </Badge>
                     </CardContent>
                   </Card>
@@ -151,7 +131,7 @@ export default function Journey() {
                 {/* Center icon - visible on all screens */}
                 <div className="w-full md:w-2/12 flex justify-center my-4 md:my-0">
                   <div className="w-12 h-12 rounded-full bg-primary/10 border-4 border-background flex items-center justify-center">
-                    <item.icon className="h-5 w-5 text-primary" />
+                    <cert.icon className="h-5 w-5 text-primary" />
                   </div>
                 </div>
 
@@ -164,4 +144,4 @@ export default function Journey() {
       </motion.div>
     </section>
   );
-}
+} 

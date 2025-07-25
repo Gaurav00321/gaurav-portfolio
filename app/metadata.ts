@@ -4,10 +4,12 @@ export const siteConfig = {  name: "Gaurav Upadhyay",
   title: "Gaurav Upadhyay - Founder of ThinkFlowGPT",
   description: "Gaurav Upadhyay is the founder of ThinkFlowGPT, pioneering AI-driven workflow automation solutions that transform how businesses operate and scale their processes.",
   url: "https://gauravupadhyay.vercel.app",
-  ogImage: "/Gaurav.png",
+  ogImage: "https://gauravupadhyay.vercel.app/Gaurav.png",
   links: {
     github: "https://github.com/Gaurav00321",
     linkedin: "https://linkedin.com/in/gauravupadhyay",
+    instagram: "https://www.instagram.com/gauravxupadhyay",
+    twitter: "https://x.com/gauravXupadhyay",
   }
 }
 

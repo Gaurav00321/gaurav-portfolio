@@ -48,10 +48,18 @@ const highlights = [
   },
 ];
 
+const iconColors = [
+  "text-blue-500",
+  "text-green-500",
+  "text-yellow-500",
+  "text-pink-500"
+];
+
 export default function About() {
   return (
     <section
       id="about"
+      aria-labelledby="about-heading"
       className="py-16 px-4 bg-secondary/20 w-full overflow-x-hidden"
     >
       <motion.div
@@ -66,10 +74,10 @@ export default function About() {
           direction="up"
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold mb-6">About Gaurav Upadhyay</h2>
           <div className="max-w-3xl mx-auto space-y-4">
             <p className="text-lg text-muted-foreground">
-              Gaurav Upadhyay is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation. A passionate software developer and AI enthusiast, he is dedicated to building innovative, user-centric solutions.
+              <strong>Gaurav Upadhyay</strong> is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation. A passionate software developer and AI enthusiast, Gaurav Upadhyay is dedicated to building innovative, user-centric solutions.
             </p>
           </div>
         </AnimatedSection>
@@ -78,7 +86,9 @@ export default function About() {
           {highlights.map((item, index) => (
             <AnimatedSection key={item.title} type="scale" delay={index * 0.1}>
               <Card className="p-6 h-full hover:bg-primary/5 transition-colors">
-                <item.icon className="w-10 h-10 text-primary mb-4" />
+                {item.icon && (
+                  <item.icon className={`w-10 h-10 mb-4 ${iconColors[index % iconColors.length]}`} />
+                )}
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
               </Card>

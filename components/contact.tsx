@@ -93,7 +93,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" aria-labelledby="contact-heading" className="py-20 px-4">
       <div className="container max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -102,11 +102,11 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Have a project in mind or want to discuss a potential collaboration?
-            Feel free to reach out!
+            Feel free to <a href='#projects' className='underline text-primary font-medium'>explore my projects</a> or reach out!
           </p>
         </motion.div>
 

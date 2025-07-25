@@ -5,6 +5,7 @@ import Projects from "@/components/projects";
 import Testimonials from "@/components/testimonials";
 import Contact from "@/components/contact";
 import BackgroundSwitcher from "@/components/background-switcher";
+import Certifications from "@/components/certifications";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <Projects />
       <Journey />
+      <Certifications />
       <Testimonials />
       <Contact />
     </main>

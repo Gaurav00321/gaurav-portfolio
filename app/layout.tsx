@@ -39,6 +39,7 @@ export default function RootLayout({
                     url: "https://gauravupadhyay.vercel.app/Gaurav.png",
                     height: 800,
                     width: 800,
+                    caption: "Gaurav Upadhyay"
                   },
                   sameAs: [
                     "https://github.com/Gaurav00321",

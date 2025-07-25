@@ -110,7 +110,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-8 md:py-20 bg-muted/50">
+    <section id="testimonials" aria-labelledby="testimonials-heading" className="py-8 md:py-20 bg-muted/50">
       <div className="w-full md:container md:max-w-6xl md:mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center mb-6 md:mb-16 px-4 md:px-0"
         >
-          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
+          <h2 id="testimonials-heading" className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
             Client Testimonials
           </h2>
           <div className="h-1 w-16 md:w-20 bg-primary mx-auto mb-4 md:mb-6"></div>

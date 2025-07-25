@@ -51,6 +51,7 @@ export default function Hero() {
   return (
     <section
       id="home"
+      aria-labelledby="hero-heading"
       className="min-h-screen flex flex-col justify-center items-center pt-16 pb-8 px-4 w-full overflow-x-hidden"
     >
       <div className="container w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-4 md:px-6 lg:px-8">
@@ -60,7 +61,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-center md:text-left order-2 md:order-1"
         >
-          <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+          <div className="flex items-center justify-center md:justify-start gap-2 mt-8 mb-4">
             <span className="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
               SEO Expert
             </span>
@@ -68,19 +69,16 @@ export default function Hero() {
               Web Developer
             </span>
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            <span className="block">Crafting Digital</span>
-            <span className="block text-primary">Success Stories</span>
+          <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+            <span className="block text-primary">Hi, I'm Gaurav Upadhyay</span>
           </h1>
           <p className="text-base md:text-xl text-muted-foreground mb-6 max-w-lg mx-auto md:mx-0">
-            SEO strategist and full-stack developer helping businesses achieve
-            higher rankings and exceptional user experiences through optimized,
-            performant web solutions.
+          I bring a visionary mindset to every project, blending AI innovation with clean front-end architecture. As a Next.js developer, I build blazing-fast, SEO-optimized applications with intuitive, responsive design.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start mb-8">
             <Button
               size="lg"
-              className="px-6 py-3 h-auto flex items-center gap-2 text-lg"
+              className="px-6 py-3 h-auto bg-cyan-400 hover:bg-cyan-300 flex items-center gap-2 text-lg"
               asChild
             >
               <a href="#projects">
@@ -91,7 +89,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="px-6 py-3 h-auto flex items-center gap-2 text-lg group"
+              className="px-6 py-3 h-auto text-cyan-400 hover:text-cyan-300 flex items-center gap-2 text-lg group"
               asChild
             >
               <a href="https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing" target="_blank">
@@ -102,15 +100,15 @@ export default function Hero() {
           </div>
           <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto md:mx-0">
             <div className="flex flex-col items-center p-4 rounded-lg bg-card">
-              <Search className="h-6 w-6 text-primary mb-2" />
+              <Search className="h-6 w-6 text-orange-100 mb-2" />
               <span className="text-sm font-medium">SEO</span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-card">
-              <Code className="h-6 w-6 text-primary mb-2" />
+              <Code className="h-6 w-6 text-yellow-400 mb-2" />
               <span className="text-sm font-medium">Development</span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-card">
-              <Globe className="h-6 w-6 text-primary mb-2" />
+              <Globe className="h-6 w-6 text-sky-400 mb-2" />
               <span className="text-sm font-medium">Analytics</span>
             </div>
           </div>

@@ -134,7 +134,7 @@ export default function Projects() {
       : projects.filter((project) => project.category === category);
 
   return (
-    <section id="projects" className="py-16 px-4 bg-secondary/20">
+    <section id="projects" aria-labelledby="projects-heading" className="py-16 px-4 bg-secondary/20">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -147,7 +147,7 @@ export default function Projects() {
           direction="up"
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 id="projects-heading" className="text-3xl md:text-4xl font-bold mb-4">
             Featured Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -159,12 +159,17 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <AnimatedSection key={project.id} type="scale" delay={index * 0.1}>
-              <Card className="group overflow-hidden h-full">
+              <Card className="group overflow-hidden h-full" itemScope itemType="https://schema.org/Project">
                 <div className="relative aspect-video cursor-pointer">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={`${project.title} - Project Screenshot`}
+                    alt={`${project.title} by Gaurav Upadhyay - AI & Web Project Screenshot`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 800px"
                     className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    itemProp="image"
+                    priority={index === 0}
+                    unoptimized={project.image.endsWith('.gif')}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -192,12 +197,12 @@ export default function Projects() {
                         <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4 bg-secondary/10">
                           <Image
                             src={project.dialogImage || project.image}
-                            alt={`${project.title} - Project Screenshot`}
+                            alt={`${project.title} by Gaurav Upadhyay - AI & Web Project Screenshot`}
                             fill
                             sizes="(max-width: 768px) 100vw, 800px"
                             className="object-contain"
                             priority
-                            unoptimized={project.image.endsWith('.gif')}
+                            unoptimized={(project.dialogImage || project.image).endsWith('.gif')}
                           />
                         </div>
 
@@ -266,10 +271,10 @@ export default function Projects() {
                   </Dialog>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
+                  <h3 className="text-xl font-semibold mb-2" itemProp="name">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground line-clamp-2">
+                  <p className="text-muted-foreground line-clamp-2" itemProp="description">
                     {project.description}
                   </p>
                 </div>

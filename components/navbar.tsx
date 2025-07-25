@@ -38,65 +38,36 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-border/40 shadow-sm backdrop-blur-lg",
         scrolled
-          ? "bg-background/80 backdrop-blur-md py-2 shadow-md"
+          ? "bg-background/80 py-2"
           : "bg-transparent py-4"
       )}
     >
       <div className="container flex items-center justify-between">
         <Link
           href="#home"
-          className="text-2xl font-bold tracking-tighter transition-colors hover:text-primary"
+          className="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent transition-colors hover:from-primary/80 hover:to-primary"
         >
-          Gaurav
+          Gaurav Upadhyay
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+              className="text-base font-semibold tracking-wide transition-colors hover:text-primary relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.name}
             </Link>
           ))}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
-          <Link href={"https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing"} target="_blank">
-          <Button variant="outline" className="flex items-center gap-2">
-            <Download className="h-4 w-4" /> Resume
-          </Button>
-          </Link>
+
         </nav>
 
         {/* Mobile Menu */}
         <div className="flex items-center md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="mr-2"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </Button>
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button
@@ -111,33 +82,21 @@ export default function Navbar() {
                 )}
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80vw] sm:w-[350px] p-0">
-              <SheetHeader className="p-6 border-b">
-                <SheetTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
-                  Menu
-                </SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col p-6">
+            <SheetContent side="left" className="w-[80vw] sm:w-[300px] p-0 bg-background">
+              <div className="p-6 border-b flex items-center h-16">
+                <span className="text-2xl font-extrabold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Gaurav</span>
+              </div>
+              <nav className="flex flex-col p-4 gap-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="group flex items-center justify-between text-lg font-medium transition-colors hover:text-primary py-4 border-b border-border/50 last:border-none"
+                    className="text-lg font-medium px-3 py-2 rounded-md transition-colors hover:bg-primary/10 focus:bg-primary/10 focus:outline-none"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
-                    <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </Link>
                 ))}
-                <Button 
-                  variant="default" 
-                  className="flex items-center gap-2 mt-6 w-full text-lg h-12"
-                  asChild
-                >
-                  <a href="https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing" target="_blank" download>
-                    <Download className="h-5 w-5" /> Download Resume
-                  </a>
-                </Button>
               </nav>
             </SheetContent>
           </Sheet>
