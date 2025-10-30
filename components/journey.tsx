@@ -20,15 +20,6 @@ const journeyItems = [
   },
   {
     year: "2025 - Present",
-    title: "Chief Scientist",
-    organization: "amTop Inc.",
-    description:
-      "At amTop, my mission is to advance AI research and engineering, ensuring our technology remains cutting-edge and impactful. I believe in a future where AI seamlessly integrates with human decision-making, optimizing complex problem-solving while maintaining reliability and responsibility. Let's push the limits of AI and redefine what's possible.",
-    icon: Briefcase,
-    type: "work",
-  },
-  {
-    year: "2025 - Present",
     title: "Founder",
     organization: "ThinkFLowGPT.",
     description:

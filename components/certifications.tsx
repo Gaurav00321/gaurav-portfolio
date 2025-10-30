@@ -11,30 +11,22 @@ import { staggerContainer } from "@/lib/animation";
 const certifications = [
   {
     year: "2024",
-    title: "AWS Certified Solutions Architect – Associate",
-    issuer: "Amazon Web Services",
+    title: "NASSCOM Certification - Java",
+    issuer: "FutureSkills Prime",
     description:
-      "Validated expertise in designing and deploying scalable systems on AWS, with a focus on security, reliability, and best practices.",
+      "Proficiency in Java through NASSCOM certification, covering core concepts and best practices.",
     icon: Award,
   },
   {
-    year: "2023",
-    title: "Google Cloud Professional Data Engineer",
-    issuer: "Google Cloud",
+    year: "2024",
+    title: "Data Structure and Algorithms using Java",
+    issuer: "NPTEL",
     description:
-      "Demonstrated ability to design, build, operationalize, secure, and monitor data processing systems on Google Cloud Platform.",
+      "In-depth knowledge of DSA with NPTEL certification, focusing on problem-solving techniques.",
     icon: Award,
   },
   {
-    year: "2022",
-    title: "Microsoft Certified: Azure AI Engineer Associate",
-    issuer: "Microsoft",
-    description:
-      "Proven skills in using Azure AI services, including natural language processing, computer vision, and conversational AI.",
-    icon: Award,
-  },
-  {
-    year: "2021",
+    year: "2024",
     title: "Postman Student Expert",
     issuer: "Postman",
     description:

@@ -37,6 +37,19 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "AetherOS",
+    description: "A 3D team management system built using Three.js and React.",
+    image: "/aetheros-vid.gif?height=600&width=800",
+    dialogImage: "/aetheros-vid.gif?height=600&width=800", // Adding a high-quality image for dialog
+    tags: ["Three.js", "JavaScript", "HTML5", "CSS3"],
+    category: "frontend",
+    demoUrl: "https://aether-os-landing-page.vercel.app",
+    githubUrl: "https://github.com/Gaurav00321/AetherOS-landingPage",
+    details:
+      "3D Teams is a premium web service dedicated to building stunning, interactive 3D websites for companies and customers. We specialize in crafting immersive digital experiences that blend cutting-edge 3D design, animation, and web development to elevate brands and captivate audiences. Our team ensures seamless performance, responsiveness, and customization, delivering visually striking websites that stand out in the digital landscape.",
+  },
+  {
+    id: 2,
     title: "ThinkFlowGPT",
     description:
       "An advanced AI-driven workflow automation system designed to enhance business efficiency and student productivity.",
@@ -57,30 +70,17 @@ const projects: Project[] = [
       "ThinkFlowGPT is an AI-powered innovation designed to redefine automation and intelligent decision-making. Built with cutting-edge machine learning and natural language processing, it streamlines complex workflows, optimizes efficiency, and empowers businesses to scale effortlessly. ThinkFlowGPT isn't just an AI tool—it's a vision for the future, where automation adapts, learns, and enhances productivity without replacing human ingenuity.",
   },
   {
-    id: 2,
+    id: 3,
     title: "Portfolio Website",
     description:
       "A creative portfolio website with 3D elements and interactive animations.",
-    image: "/Portfolio-image.png?height=600&width=800",
+    image: "/demo-portfolio.gif?height=400&width=800",
     tags: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
     category: "frontend",
-    demoUrl: "https://gauravupadhyay.vercel.app/",
-    githubUrl: "https://github.com/Gaurav00321/gaurav-portfolio",
+    demoUrl: "https://3d-teams-portfolio.vercel.app",
+    githubUrl: "https://github.com/Gaurav00321/3d-portfolio",
     details:
       "This portfolio website showcases creative work through an immersive user experience. Features include 3D model viewers using Three.js, smooth page transitions with Framer Motion, responsive design with Tailwind CSS, and a custom-built contact form with validation.",
-  },
-  {
-    id: 3,
-    title: "3D Teams",
-    description: "A 3D team management system built using Three.js and React.",
-    image: "/3D_Teams.png",
-    dialogImage: "/3D_Teams.png", // Adding a high-quality image for dialog
-    tags: ["Three.js", "JavaScript", "HTML5", "CSS3"],
-    category: "frontend",
-    demoUrl: "https://3d-teams.vercel.app",
-    githubUrl: "https://github.com/Gaurav00321/3D-Teams",
-    details:
-      "3D Teams is a premium web service dedicated to building stunning, interactive 3D websites for companies and customers. We specialize in crafting immersive digital experiences that blend cutting-edge 3D design, animation, and web development to elevate brands and captivate audiences. Our team ensures seamless performance, responsiveness, and customization, delivering visually striking websites that stand out in the digital landscape.",
   },
   {
     id: 4,
