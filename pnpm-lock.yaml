@@ -95,6 +95,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.1.6
         version: 1.2.7(@types/react-dom@19.1.5(@types/react@19.1.6))(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@vercel/speed-insights':
+        specifier: ^1.3.1
+        version: 1.3.1(next@15.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.3)
@@ -1085,6 +1088,29 @@ packages:
 
   '@types/react@19.1.6':
     resolution: {integrity: sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==}
+
+  '@vercel/speed-insights@1.3.1':
+    resolution: {integrity: sha512-PbEr7FrMkUrGYvlcLHGkXdCkxnylCWePx7lPxxq36DNdfo9mcUjLOmqOyPDHAOgnfqgGGdmE3XI9L/4+5fr+vQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -2781,6 +2807,11 @@ snapshots:
   '@types/react@19.1.6':
     dependencies:
       csstype: 3.1.3
+
+  '@vercel/speed-insights@1.3.1(next@15.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+    optionalDependencies:
+      next: 15.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
 
   ansi-regex@5.0.1: {}
 
