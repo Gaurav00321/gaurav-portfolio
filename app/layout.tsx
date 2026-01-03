@@ -1,6 +1,6 @@
 import type React from "react";
 import "@/app/globals.css";
-import { defaultMetadata } from "./metadata";
+import { defaultMetadata, siteConfig } from "./metadata";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
@@ -32,7 +32,7 @@ export default function RootLayout({
                   name: "Gaurav Upadhyay",
                   givenName: "Gaurav",
                   familyName: "Upadhyay",
-                  description: "Founder of ThinkFlowGPT & AI/ML engineer",
+                  description: "Gaurav Upadhyay is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation.",
                   image: {
                     "@type": "ImageObject",
                     "@id": "https://gauravupadhyay.vercel.app/#personImage",
@@ -42,22 +42,24 @@ export default function RootLayout({
                     caption: "Gaurav Upadhyay"
                   },
                   sameAs: [
-                    "https://github.com/Gaurav00321",
-                    "https://linkedin.com/in/gauravupadhyay",
+                    siteConfig.links.github,
+                    siteConfig.links.linkedin,
+                    siteConfig.links.instagram,
+                    siteConfig.links.twitter
                   ],
-                  jobTitle: ["Founder", "AI Engineer", "Machine Learning Engineer"],
+                  jobTitle: ["Founder", "Software Developer", "AI Enthusiast"],
                   worksFor: {
                     "@type": "Organization",
                     "@id": "https://gauravupadhyay.vercel.app/#organization",
                     name: "ThinkFlowGPT",
-                    description: "AI-driven workflow automation solutions",
+                    description: "AI-driven workflow automation startup revolutionizing business processes with intelligent automation",
                   },
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://gauravupadhyay.vercel.app/#website",
                   url: "https://gauravupadhyay.vercel.app",
-                  name: "Gaurav Upadhyay - Portfolio",
+                  name: "Gaurav Upadhyay - Founder of ThinkFlowGPT",
                   description: "AI/ML Engineer & Founder of ThinkFlowGPT",
                   publisher: {
                     "@id": "https://gauravupadhyay.vercel.app/#person",
