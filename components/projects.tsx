@@ -39,8 +39,8 @@ const projects: Project[] = [
     id: 1,
     title: "AetherOS",
     description: "A 3D team management system built using Three.js and React.",
-    image: "/aetheros-vid.gif?height=600&width=800",
-    dialogImage: "/aetheros-vid.gif?height=600&width=800", // Adding a high-quality image for dialog
+    image: "/aetheros-vid.gif",
+    dialogImage: "/aetheros-vid.gif", // Adding a high-quality image for dialog
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3"],
     category: "frontend",
     demoUrl: "https://aether-os-landing-page.vercel.app",
@@ -53,7 +53,7 @@ const projects: Project[] = [
     title: "ThinkFlowGPT",
     description:
       "An advanced AI-driven workflow automation system designed to enhance business efficiency and student productivity.",
-    image: "/ThinkFlowGPT.png?height=600&width=800",
+    image: "/ThinkFlowGPT.png",
     tags: [
       "Next.js",
       "React",
@@ -74,7 +74,7 @@ const projects: Project[] = [
     title: "Portfolio Website",
     description:
       "A creative portfolio website with 3D elements and interactive animations.",
-    image: "/demo-portfolio.gif?height=400&width=800",
+    image: "/demo-portfolio.gif",
     tags: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
     category: "frontend",
     demoUrl: "https://3d-teams-portfolio.vercel.app",
@@ -87,7 +87,7 @@ const projects: Project[] = [
     title: "Tearable Cloth Simulation",
     description:
       "A dynamic 3D cloth simulation built using HTML5 Canvas and JavaScript, featuring tearable interactions and realistic cloth physics.",
-    image: "/interactiveTearableSimulation.gif?height=600&width=800",
+    image: "/interactiveTearableSimulation.gif",
     tags: ["HTML5", "JavaScript", "Canvas", "CSS3", "Physics"],
     category: "frontend",
     demoUrl:
@@ -102,7 +102,7 @@ const projects: Project[] = [
     title: "3D Cloth Simulation",
     description:
       "This project demonstrates a 3D cloth simulation using the Three.js library.",
-    image: "/clothSimulation.gif?height=600&width=800",
+    image: "/clothSimulation.gif",
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3", "Physics"],
     category: "frontend",
     demoUrl: "https://gaurav00321.github.io/3D-ClothSimulation",
@@ -115,11 +115,12 @@ const projects: Project[] = [
     title: "Tic Tac Toe Game",
     description:
       "A simple and fun Tic Tac Toe game built using HTML, CSS, and JavaScript.",
-    image: "/tic_tac_toe.png?height=600&width=800",
+    image: "/tic_tac_toe.png",
     tags: ["HTML", "CSS", "JavaScript"],
     category: "frontend",
     demoUrl: "https://gaurav00321.github.io/tic-tac-toeJS/",
-    githubUrl: "https://github.com/Gaurav00321/tic-tac-toeJS",    details:
+    githubUrl: "https://github.com/Gaurav00321/tic-tac-toeJS",
+    details:
       "A classic Tic Tac Toe game with a modern interface. Features include a responsive game board, interactive gameplay with X and O markers, turn tracking, win/draw detection, score tracking, and a clean minimalist design. The game includes visual feedback for winning combinations and a restart option for continuous play.",
   },
 ];
