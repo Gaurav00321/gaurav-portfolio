@@ -79,6 +79,9 @@ export default function About() {
             <p className="text-lg text-muted-foreground">
               <strong>Gaurav Upadhyay</strong> is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation. A passionate software developer and AI enthusiast, Gaurav Upadhyay is dedicated to building innovative, user-centric solutions.
             </p>
+            <div className="pt-4">
+              <a href="/who-is-gaurav-upadhyay" className="text-primary hover:underline font-medium">Read more about Gaurav Upadhyay &rarr;</a>
+            </div>
           </div>
         </AnimatedSection>
 

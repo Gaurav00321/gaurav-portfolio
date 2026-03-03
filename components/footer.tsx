@@ -22,6 +22,12 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
               <Link
+                href="/who-is-gaurav-upadhyay"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Biography
+              </Link>
+              <Link
                 href="#about"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >

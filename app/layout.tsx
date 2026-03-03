@@ -29,43 +29,59 @@ export default function RootLayout({
                 {
                   "@type": "Person",
                   "@id": "https://gauravupadhyay.vercel.app/#person",
-                  name: "Gaurav Upadhyay",
-                  givenName: "Gaurav",
-                  familyName: "Upadhyay",
-                  description: "Gaurav Upadhyay is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation.",
-                  image: {
+                  "name": "Gaurav Upadhyay",
+                  "givenName": "Gaurav",
+                  "familyName": "Upadhyay",
+                  "description": "Gaurav Upadhyay is an AI Engineer, Software Developer, and the Founder of ThinkFlowGPT, specializing in intelligent workflow automation.",
+                  "image": {
                     "@type": "ImageObject",
                     "@id": "https://gauravupadhyay.vercel.app/#personImage",
-                    url: "https://gauravupadhyay.vercel.app/Gaurav.png",
-                    height: 800,
-                    width: 800,
-                    caption: "Gaurav Upadhyay"
+                    "url": "https://gauravupadhyay.vercel.app/Gaurav.png",
+                    "height": 800,
+                    "width": 800,
+                    "caption": "Gaurav Upadhyay"
                   },
-                  sameAs: [
-                    siteConfig.links.github,
-                    siteConfig.links.linkedin,
-                    siteConfig.links.instagram,
-                    siteConfig.links.twitter
+                  "url": "https://gauravupadhyay.vercel.app",
+                  "sameAs": [
+                    "https://github.com/Gaurav00321",
+                    "https://www.linkedin.com/in/gauravupadhyay-tech",
+                    "https://x.com/gauravXupadhyay",
+                    "https://www.instagram.com/gauravxupadhyay"
                   ],
-                  jobTitle: ["Founder", "Software Developer", "AI Enthusiast"],
-                  worksFor: {
-                    "@type": "Organization",
-                    "@id": "https://gauravupadhyay.vercel.app/#organization",
-                    name: "ThinkFlowGPT",
-                    description: "AI-driven workflow automation startup revolutionizing business processes with intelligent automation",
+                  "jobTitle": "Founder & AI Engineer",
+                  "worksFor": {
+                    "@id": "https://gauravupadhyay.vercel.app/#organization"
                   },
+                  "alumniOf": {
+                    "@type": "EducationalOrganization",
+                    "name": "Maharshi Dayanand University"
+                  },
+                  "knowsAbout": ["Artificial Intelligence", "Workflow Automation", "Next.js", "Software Engineering", "Machine Learning"]
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://gauravupadhyay.vercel.app/#organization",
+                  "name": "ThinkFlowGPT",
+                  "url": "https://gauravupadhyay.vercel.app", // Adjust if there's a standalone site
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://gauravupadhyay.vercel.app/Gaurav.png" // Fallback if no specific logo available right now
+                  },
+                  "founder": {
+                    "@id": "https://gauravupadhyay.vercel.app/#person"
+                  },
+                  "description": "An AI-driven workflow automation startup revolutionizing business processes."
                 },
                 {
                   "@type": "WebSite",
                   "@id": "https://gauravupadhyay.vercel.app/#website",
-                  url: "https://gauravupadhyay.vercel.app",
-                  name: "Gaurav Upadhyay - Founder of ThinkFlowGPT",
-                  description: "AI/ML Engineer & Founder of ThinkFlowGPT",
-                  publisher: {
-                    "@id": "https://gauravupadhyay.vercel.app/#person",
-                  },
-                },
-              ],
+                  "url": "https://gauravupadhyay.vercel.app",
+                  "name": "Gaurav Upadhyay | AI Engineer",
+                  "publisher": {
+                    "@id": "https://gauravupadhyay.vercel.app/#person"
+                  }
+                }
+              ]
             }),
           }}
         />

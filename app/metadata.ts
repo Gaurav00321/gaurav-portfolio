@@ -2,19 +2,20 @@ import { Metadata } from 'next'
 
 export const siteConfig = {
   name: "Gaurav Upadhyay",
-  title: "Gaurav Upadhyay - Founder of ThinkFlowGPT | AI & Automation Expert",
-  description: "Gaurav Upadhyay is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation. A passionate software developer and AI enthusiast, Gaurav Upadhyay is dedicated to building innovative, user-centric solutions.",
+  title: "Gaurav Upadhyay | AI Engineer & Founder of ThinkFlowGPT",
+  description: "Gaurav Upadhyay is an AI Engineer and the Founder of ThinkFlowGPT. Learn about his work in intelligent workflow automation, software development, and AI innovation.",
   url: "https://gauravupadhyay.vercel.app",
   ogImage: "https://gauravupadhyay.vercel.app/Gaurav.png",
   links: {
     github: "https://github.com/Gaurav00321",
     linkedin: "https://www.linkedin.com/in/gauravupadhyay-tech",
-    instagram: "https://www.instagram.com/gauravxupadhyay",
     twitter: "https://x.com/gauravXupadhyay",
+    instagram: "https://www.instagram.com/gauravxupadhyay",
   }
 }
 
 export const defaultMetadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
@@ -22,25 +23,17 @@ export const defaultMetadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Gaurav Upadhyay",
+    "Who is Gaurav Upadhyay",
     "Founder of ThinkFlowGPT",
     "ThinkFlowGPT",
-    "AI-driven workflow automation",
-    "Intelligent Automation",
-    "Business Process Revolution",
-    "AI Enthusiast",
+    "AI Engineer India",
+    "Workflow Automation Expert",
     "Software Developer",
-    "Innovative Solutions",
-    "User-centric AI",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Automation Startup",
-    "Tech Founder",
   ],
-  authors: [{ name: siteConfig.name }],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
-  metadataBase: new URL(siteConfig.url),
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.title,
@@ -51,7 +44,7 @@ export const defaultMetadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: "Gaurav Upadhyay - AI Engineer",
       },
     ],
   },
@@ -60,7 +53,7 @@ export const defaultMetadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@gauravupadhyay",
+    creator: "@gauravXupadhyay",
   },
   robots: {
     index: true,
@@ -78,5 +71,5 @@ export const defaultMetadata: Metadata = {
   },
   verification: {
     google: "QSox7IUrhJ6YB6ZL_GmO8NQ97zYcxurqnl1R6QBxu04",
-  },
+  }
 }
