@@ -1,53 +1,11 @@
 "use client";
 
-import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Globe, Search, Code, Rocket } from "lucide-react";
+import { ArrowDown, Bot, Layers, Mail, Rocket, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "@/components/theme-provider";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import ProfileCard from "@/components/profile-card";
 
 export default function Hero() {
-  const { theme } = useTheme();
-  const profileRef = useRef<HTMLDivElement>(null);
-
-  // 3D tilt effect for profile image
-  useEffect(() => {
-    const profile = profileRef.current;
-    if (!profile) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const { left, top, width, height } = profile.getBoundingClientRect();
-      const x = (e.clientX - left) / width - 0.5;
-      const y = (e.clientY - top) / height - 0.5;
-
-      profile.style.transform = `
-        perspective(1000px)
-        rotateY(${x * 10}deg)
-        rotateX(${y * -10}deg)
-        translateZ(10px)
-      `;
-    };
-
-    const handleMouseLeave = () => {
-      profile.style.transform = `
-        perspective(1000px)
-        rotateY(0deg)
-        rotateX(0deg)
-        translateZ(0px)
-      `;
-    };
-
-    profile.addEventListener("mousemove", handleMouseMove);
-    profile.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      profile.removeEventListener("mousemove", handleMouseMove);
-      profile.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
-
   return (
     <section
       id="home"
@@ -61,19 +19,33 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-center md:text-left order-2 md:order-1"
         >
-          <div className="flex items-center justify-center md:justify-start gap-2 mt-8 mb-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-8 mb-4">
             <span className="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-              SEO Expert
+              Chief Scientist, amTop
             </span>
             <span className="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-              Web Developer
+              Founder, ThinkFlowGPT
             </span>
           </div>
-          <h1 id="hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            <span className="block text-primary">Hi, I'm Gaurav Upadhyay</span>
+          <h1
+            id="hero-heading"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
+          >
+            <span className="block text-primary">
+              Building the AI that runs your marketing — not just assists it.
+            </span>
           </h1>
-          <p className="text-base md:text-xl text-muted-foreground mb-6 max-w-lg mx-auto md:mx-0">
-          I bring a visionary mindset to every project, blending AI innovation with clean front-end architecture. As a Next.js developer, I build blazing-fast, SEO-optimized applications with intuitive, responsive design.
+          <p className="text-base md:text-xl text-muted-foreground mb-2 max-w-xl mx-auto md:mx-0 font-medium">
+            Gaurav Upadhyay, Co-Founder & Chief Scientist at amTop, and Founder
+            of ThinkFlowGPT
+          </p>
+          <p className="text-sm md:text-base text-muted-foreground mb-6 max-w-xl mx-auto md:mx-0">
+            I&apos;m an AI engineer and founder working at the intersection of
+            agentic systems and business automation. At amTop, I lead the
+            research and architecture behind AI agents that plan, execute, and
+            optimize marketing campaigns autonomously. At ThinkFlowGPT,
+            I&apos;m building the next layer of intelligent workflow automation
+            for growing businesses.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start mb-8">
             <Button
@@ -81,9 +53,9 @@ export default function Hero() {
               className="px-6 py-3 h-auto bg-cyan-400 hover:bg-cyan-300 flex items-center gap-2 text-lg"
               asChild
             >
-              <a href="#projects">
-                View Portfolio
-                <Rocket className="h-5 w-5" />
+              <a href="#contact">
+                Let&apos;s connect
+                <Mail className="h-5 w-5" />
               </a>
             </Button>
             <Button
@@ -92,24 +64,26 @@ export default function Hero() {
               className="px-6 py-3 h-auto text-cyan-400 hover:text-cyan-300 flex items-center gap-2 text-lg group"
               asChild
             >
-              <a href="https://drive.google.com/file/d/17eDR63AnfRxm3dxUPqQilglwI0noz5JI/view?usp=sharing" target="_blank">
-                Download Resume
-                <Download className="h-5 w-5 group-hover:translate-y-1 transition-transform" />
+              <a href="#projects">
+                View Portfolio
+                <Rocket className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
           </div>
           <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto md:mx-0">
             <div className="flex flex-col items-center p-4 rounded-lg bg-card">
-              <Search className="h-6 w-6 text-orange-100 mb-2" />
-              <span className="text-sm font-medium">SEO</span>
+              <Bot className="h-6 w-6 text-orange-100 mb-2" />
+              <span className="text-sm font-medium text-center">Agentic AI</span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-card">
-              <Code className="h-6 w-6 text-yellow-400 mb-2" />
-              <span className="text-sm font-medium">Development</span>
+              <Layers className="h-6 w-6 text-yellow-400 mb-2" />
+              <span className="text-sm font-medium text-center">
+                Marketing Automation
+              </span>
             </div>
             <div className="flex flex-col items-center p-4 rounded-lg bg-card">
-              <Globe className="h-6 w-6 text-sky-400 mb-2" />
-              <span className="text-sm font-medium">Analytics</span>
+              <Workflow className="h-6 w-6 text-sky-400 mb-2" />
+              <span className="text-sm font-medium text-center">Workflows</span>
             </div>
           </div>
         </motion.div>
@@ -120,18 +94,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex justify-center md:justify-end order-1 md:order-2 mb-6 md:mb-0"
         >
-          <div
-            ref={profileRef}
-            className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl"
-          >
-            <Image
-              src="/Gaurav.png"
-              alt="Gaurav's Profile"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <ProfileCard />
         </motion.div>
       </div>
 
@@ -141,12 +104,7 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mt-16 animate-bounce"
       >
-        <Button
-          variant="ghost"
-          size="icon"
-          aria-label="Scroll down"
-          asChild
-        >
+        <Button variant="ghost" size="icon" aria-label="Scroll down" asChild>
           <a href="#about">
             <ArrowDown className="h-6 w-6" />
           </a>

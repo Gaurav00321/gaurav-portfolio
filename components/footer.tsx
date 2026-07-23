@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { siteConfig } from "@/app/metadata";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,13 +9,10 @@ export default function Footer() {
     <footer className="w-full bg-muted/50 border-t border-border">
       <div className="w-full md:container md:max-w-6xl mx-auto py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
-          {/* About Section */}
+          {/* About Section — short bio for press/footer use */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">About Me</h3>
-            <p className="text-sm text-muted-foreground">
-              A passionate AI researcher dedicated to pushing the boundaries of
-              technology
-            </p>
+            <p className="text-sm text-muted-foreground">{siteConfig.shortBio}</p>
           </div>
 
           {/* Quick Links */}
@@ -55,7 +53,7 @@ export default function Footer() {
                 href="#contact"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                Contact
+                Let&apos;s connect
               </Link>
             </nav>
           </div>
@@ -65,36 +63,48 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex flex-col space-y-2">
               <a
-                href="mailto:gauravupadhyay.career@gmail.com"
+                href={`mailto:${siteConfig.email}`}
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="h-4 w-4 mr-2" />
-                gauravupadhyay.career@gmail.com
+                {siteConfig.email}
               </a>
               <div className="flex items-center space-x-4 pt-2">
                 <a
-                  href="https://github.com/Gaurav00321"
+                  href={siteConfig.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/gauravupadhyay-tech/"
+                  href={siteConfig.links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://x.com/gauravXupadhyay"
+                  href={siteConfig.links.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Twitter className="h-5 w-5" />
+                </a>
+                <a
+                  href={siteConfig.links.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -107,20 +117,6 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
               © {currentYear} Gaurav Upadhyay. All rights reserved.
             </p>
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-              <Link
-                href="/privacy"
-                className="hover:text-primary transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-primary transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>

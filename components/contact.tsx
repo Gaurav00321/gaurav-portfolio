@@ -23,8 +23,17 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Instagram,
   Send,
 } from "lucide-react";
+
+const socialLinks = {
+  github: "https://github.com/Gaurav00321",
+  linkedin: "https://www.linkedin.com/in/gauravupadhyay-ai",
+  twitter: "https://x.com/gauravu_ai",
+  instagram: "https://www.instagram.com/gauravupadhyay.ai",
+  email: "gauravupadhyay.career@gmail.com",
+};
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -102,11 +111,12 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s connect</h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Have a project in mind or want to discuss a potential collaboration?
-            Feel free to <a href='#projects' className='underline text-primary font-medium'>explore my projects</a> or reach out!
+            Working on agentic AI, marketing automation, or the next frontier of
+            business systems? Reach out via email, LinkedIn, or the form below —
+            I&apos;d love to talk.
           </p>
         </motion.div>
 
@@ -123,9 +133,12 @@ export default function Contact() {
                 <Mail className="h-5 w-5 text-primary mr-4 mt-1" />
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-muted-foreground">
-                    gauravupadhyay.career@gmail.com
-                  </p>
+                  <a
+                    href={`mailto:${socialLinks.email}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {socialLinks.email}
+                  </a>
                 </div>
               </div>
               <div className="flex items-start">
@@ -149,21 +162,43 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mt-12 mb-6">Connect With Me</h3>
             <div className="flex space-x-4">
               <Button variant="outline" size="icon" asChild>
-                <a href="https://github.com/Gaurav00321" aria-label="GitHub">
+                <a
+                  href={socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                >
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>
                 <a
-                  href="https://www.linkedin.com/in/gauravupadhyay-tech/"
+                  href={socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <a href="https://x.com/gauravXupadhyay" aria-label="Twitter">
+                <a
+                  href={socialLinks.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
+                >
                   <Twitter className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
                 </a>
               </Button>
             </div>

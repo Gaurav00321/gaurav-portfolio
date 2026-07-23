@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import About from "@/components/about";
+import AiEntityBlock from "@/components/ai-entity-block";
 import Journey from "@/components/journey";
 import Projects from "@/components/projects";
 import Testimonials from "@/components/testimonials";
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="relative">
       <BackgroundSwitcher />
       <Hero />
+      <AiEntityBlock />
       <About />
       <Projects />
       <Journey />

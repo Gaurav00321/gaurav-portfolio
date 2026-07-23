@@ -1,13 +1,13 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects by Gaurav Upadhyay | AI & Web Development Portfolio",
+  title: "Projects by Gaurav Upadhyay | Agentic AI & Automation",
   description:
-    "Explore Gaurav Upadhyay's portfolio of AI and web development projects. Including ThinkFlowGPT, amTop, and other innovative solutions.",
+    "Explore projects by Gaurav Upadhyay — agentic AI, marketing automation at amTop, ThinkFlowGPT workflow automation, and more.",
   openGraph: {
-    title: "Projects by Gaurav Upadhyay | AI & Web Development Portfolio",
+    title: "Projects by Gaurav Upadhyay | Agentic AI & Automation",
     description:
-      "Explore Gaurav Upadhyay's portfolio of AI and web development projects. Including ThinkFlowGPT, amTop, and other innovative solutions.",
+      "Explore projects by Gaurav Upadhyay — agentic AI, marketing automation, and ThinkFlowGPT.",
     images: ["/Gaurav.png"],
   },
 };

@@ -28,60 +28,122 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Person",
-                  "@id": "https://gauravupadhyay.vercel.app/#person",
-                  "name": "Gaurav Upadhyay",
-                  "givenName": "Gaurav",
-                  "familyName": "Upadhyay",
-                  "description": "Gaurav Upadhyay is an AI Engineer, Software Developer, and the Founder of ThinkFlowGPT, specializing in intelligent workflow automation.",
-                  "image": {
-                    "@type": "ImageObject",
-                    "@id": "https://gauravupadhyay.vercel.app/#personImage",
-                    "url": "https://gauravupadhyay.vercel.app/Gaurav.png",
-                    "height": 800,
-                    "width": 800,
-                    "caption": "Gaurav Upadhyay"
-                  },
-                  "url": "https://gauravupadhyay.vercel.app",
-                  "sameAs": [
-                    "https://github.com/Gaurav00321",
-                    "https://www.linkedin.com/in/gauravupadhyay-tech",
-                    "https://x.com/gauravXupadhyay",
-                    "https://www.instagram.com/gauravxupadhyay"
+                  "@id": `${siteConfig.url}/#person`,
+                  name: siteConfig.name,
+                  givenName: siteConfig.givenName,
+                  familyName: siteConfig.familyName,
+                  alternateName: [
+                    "Gaurav Upadhyay AI",
+                    "Gaurav Upadhyay amTop",
+                    "Founder of ThinkFlowGPT",
                   ],
-                  "jobTitle": "Founder & AI Engineer",
-                  "worksFor": {
-                    "@id": "https://gauravupadhyay.vercel.app/#organization"
+                  description: siteConfig.shortBio,
+                  image: {
+                    "@type": "ImageObject",
+                    "@id": `${siteConfig.url}/#personImage`,
+                    url: siteConfig.photo,
+                    height: 800,
+                    width: 800,
+                    caption: "Gaurav Upadhyay — Co-Founder & Chief Scientist at amTop",
                   },
-                  "alumniOf": {
-                    "@type": "EducationalOrganization",
-                    "name": "Maharshi Dayanand University"
+                  url: siteConfig.url,
+                  mainEntityOfPage: {
+                    "@type": "ProfilePage",
+                    "@id": `${siteConfig.url}/#profilepage`,
                   },
-                  "knowsAbout": ["Artificial Intelligence", "Workflow Automation", "Next.js", "Software Engineering", "Machine Learning"]
+                  email: siteConfig.email,
+                  sameAs: [
+                    siteConfig.links.github,
+                    siteConfig.links.linkedin,
+                    siteConfig.links.twitter,
+                    siteConfig.links.instagram,
+                  ],
+                  jobTitle: "Chief Scientist",
+                  worksFor: [
+                    {
+                      "@type": "Organization",
+                      name: "amTop",
+                      "@id": `${siteConfig.url}/#amtop`,
+                    },
+                    {
+                      "@type": "Organization",
+                      name: "ThinkFlowGPT",
+                      "@id": `${siteConfig.url}/#organization`,
+                    },
+                  ],
+                  alumniOf: {
+                    "@type": "CollegeOrUniversity",
+                    name: "Parul University",
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Vadodara",
+                    addressRegion: "Gujarat",
+                    addressCountry: "IN",
+                  },
+                  knowsAbout: [...siteConfig.knowsAbout],
+                  nationality: {
+                    "@type": "Country",
+                    name: "India",
+                  },
+                },
+                {
+                  "@type": "ProfilePage",
+                  "@id": `${siteConfig.url}/#profilepage`,
+                  url: siteConfig.url,
+                  name: siteConfig.title,
+                  description: siteConfig.description,
+                  mainEntity: {
+                    "@id": `${siteConfig.url}/#person`,
+                  },
+                  about: {
+                    "@id": `${siteConfig.url}/#person`,
+                  },
+                  primaryImageOfPage: {
+                    "@id": `${siteConfig.url}/#personImage`,
+                  },
+                  speakable: {
+                    "@type": "SpeakableSpecification",
+                    cssSelector: ["#entity-heading", "#hero-heading", "#about-heading"],
+                  },
                 },
                 {
                   "@type": "Organization",
-                  "@id": "https://gauravupadhyay.vercel.app/#organization",
-                  "name": "ThinkFlowGPT",
-                  "url": "https://gauravupadhyay.vercel.app", // Adjust if there's a standalone site
-                  "logo": {
+                  "@id": `${siteConfig.url}/#amtop`,
+                  name: "amTop",
+                  description:
+                    "Agentic AI for marketing automation — AI systems that plan, execute, and optimize campaigns autonomously.",
+                  employee: {
+                    "@id": `${siteConfig.url}/#person`,
+                  },
+                },
+                {
+                  "@type": "Organization",
+                  "@id": `${siteConfig.url}/#organization`,
+                  name: "ThinkFlowGPT",
+                  url: siteConfig.url,
+                  logo: {
                     "@type": "ImageObject",
-                    "url": "https://gauravupadhyay.vercel.app/Gaurav.png" // Fallback if no specific logo available right now
+                    url: siteConfig.photo,
                   },
-                  "founder": {
-                    "@id": "https://gauravupadhyay.vercel.app/#person"
+                  founder: {
+                    "@id": `${siteConfig.url}/#person`,
                   },
-                  "description": "An AI-driven workflow automation startup revolutionizing business processes."
+                  description:
+                    "AI-driven workflow automation startup focused on intelligent, self-operating business processes.",
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://gauravupadhyay.vercel.app/#website",
-                  "url": "https://gauravupadhyay.vercel.app",
-                  "name": "Gaurav Upadhyay | AI Engineer",
-                  "publisher": {
-                    "@id": "https://gauravupadhyay.vercel.app/#person"
-                  }
-                }
-              ]
+                  "@id": `${siteConfig.url}/#website`,
+                  url: siteConfig.url,
+                  name: siteConfig.title,
+                  description: siteConfig.description,
+                  publisher: {
+                    "@id": `${siteConfig.url}/#person`,
+                  },
+                  inLanguage: "en",
+                },
+              ],
             }),
           }}
         />

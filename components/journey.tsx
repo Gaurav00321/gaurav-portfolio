@@ -9,21 +9,30 @@ import AnimatedSection from "@/components/ui/animated-section";
 import { staggerContainer } from "@/lib/animation";
 
 const journeyItems = [
-    {
+  {
     year: "2025 - Present",
-    title: "Creator",
-    organization: "AetherOS",
+    title: "Co-Founder & Chief Scientist",
+    organization: "amTop",
     description:
-      "At AetherOS, my mission is to build an AI-powered operating system from scratch—where intelligence is native, voice-driven interaction is standard, and the system learns continuously. I envision a future where operating systems understand intent, automate proactively, and adapt to user behavior in real-time. Let’s reimagine computing with AI at the core, making it more personal, powerful, and human.",
+      "Leading the research and technical architecture behind agentic marketing automation — AI agents that plan, execute, and optimize campaigns for startups at scale, forecasting trends and optimizing ROI without constant human oversight.",
     icon: Briefcase,
     type: "work",
   },
   {
     year: "2025 - Present",
     title: "Founder",
-    organization: "ThinkFLowGPT.",
+    organization: "ThinkFlowGPT",
     description:
-      "At ThinkFlowGPT, my mission is to advance AI-driven workflow automation, ensuring our technology remains intelligent, adaptive, and impactful. I envision a future where AI enhances decision-making and streamlines complex processes, making automation more efficient, reliable, and accessible. Let's push the boundaries of AI and redefine how businesses operate.",
+      "Building AI-driven workflow automation that replaces fragmented manual processes with intelligent, self-operating systems for growing businesses.",
+    icon: Briefcase,
+    type: "work",
+  },
+  {
+    year: "2025 - Present",
+    title: "Creator",
+    organization: "AetherOS",
+    description:
+      "Building an AI-powered operating system from scratch—where intelligence is native, voice-driven interaction is standard, and the system learns continuously.",
     icon: Briefcase,
     type: "work",
   },
@@ -37,11 +46,11 @@ const journeyItems = [
     type: "achievement",
   },
   {
-    year: "2023 - present",
-    title: "Integrated Master's in Computer Science - AI",
+    year: "2023 - Present",
+    title: "Integrated Master's in AI (IMCA)",
     organization: "Parul University",
     description:
-      "Currently pursuing an Integrated Master of Computer Applications (IMCA) – AI, specializing in Artificial Intelligence, Software Engineering, and Human-Computer Interaction.",
+      "Pursuing an Integrated Master of Computer Applications (IMCA) in AI, with focus on artificial intelligence, software engineering, neural networks, and distributed systems.",
     icon: GraduationCap,
     type: "education",
   },

@@ -1,15 +1,13 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Contact Gaurav Upadhyay | AI Research Engineer & Full Stack Developer",
+  title: "Contact Gaurav Upadhyay | Let's Connect",
   description:
-    "Get in touch with Gaurav Upadhyay for AI research, web development, or collaboration opportunities. Based in Vadodara, Gujarat.",
+    "Connect with Gaurav Upadhyay — Co-Founder & Chief Scientist at amTop and Founder of ThinkFlowGPT. Reach out about agentic AI, marketing automation, or collaboration.",
   openGraph: {
-    title:
-      "Contact Gaurav Upadhyay | AI Research Engineer & Full Stack Developer",
+    title: "Contact Gaurav Upadhyay | Let's Connect",
     description:
-      "Get in touch with Gaurav Upadhyay for AI research, web development, or collaboration opportunities. Based in Vadodara, Gujarat.",
+      "Connect with Gaurav Upadhyay about agentic AI, marketing automation, or collaboration.",
     images: ["/Gaurav.png"],
   },
 };

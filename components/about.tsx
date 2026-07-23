@@ -9,42 +9,42 @@ import { Code2, Lightbulb, Rocket, Brain } from "lucide-react";
 const skills = [
   {
     category: "Frontend Development",
-    items: ["React/Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    items: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
-    category: "Backend & DevOps",
-    items: ["Node.js", "Python", "AWS", "Docker"],
+    category: "Systems & Backend",
+    items: ["Java", "C++", "Python", "Databases"],
   },
   {
-    category: "AI & Data",
-    items: ["Machine Learning", "NLP", "Data Analysis", "LLM Integration"],
+    category: "AI & Distributed Systems",
+    items: ["Neural Networks", "Agentic Systems", "Distributed Computing", "Marketing Automation"],
   },
 ];
 
 const highlights = [
   {
     icon: Brain,
-    title: "AI Innovation",
+    title: "Agentic Marketing AI",
     description:
-      "Pioneering AI solutions at ThinkFlowGPT, focusing on intelligent automation and natural language processing.",
-  },
-  {
-    icon: Code2,
-    title: "Full-Stack Excellence",
-    description:
-      "Building scalable applications with modern technologies and best practices in web development.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Problem Solving",
-    description:
-      "Transforming complex challenges into elegant, efficient, and user-centric solutions.",
+      "At amTop, leading research and architecture for AI agents that plan, execute, and optimize campaigns autonomously.",
   },
   {
     icon: Rocket,
-    title: "Leadership",
+    title: "ThinkFlowGPT",
     description:
-      "Co-founding amTop and leading teams to deliver impactful technological solutions.",
+      "Founding an AI-driven workflow automation platform that replaces fragmented manual processes with systems that get things done.",
+  },
+  {
+    icon: Code2,
+    title: "Full-Stack Foundation",
+    description:
+      "React, Next.js, TypeScript, Java, C++, Python, databases, and distributed computing — built through study and product work.",
+  },
+  {
+    icon: Lightbulb,
+    title: "First-Principles Problems",
+    description:
+      "Drawn to hard, unsolved problems — the kind that need a system rebuilt from first principles rather than patched.",
   },
 ];
 
@@ -52,7 +52,7 @@ const iconColors = [
   "text-blue-500",
   "text-green-500",
   "text-yellow-500",
-  "text-pink-500"
+  "text-pink-500",
 ];
 
 export default function About() {
@@ -74,13 +74,62 @@ export default function About() {
           direction="up"
           className="text-center mb-16"
         >
-          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold mb-6">About Gaurav Upadhyay</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
+          <h2 id="about-heading" className="text-3xl md:text-4xl font-bold mb-6">
+            About Gaurav Upadhyay
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4 text-left md:text-center">
             <p className="text-lg text-muted-foreground">
-              <strong>Gaurav Upadhyay</strong> is the Founder of ThinkFlowGPT, an AI-driven workflow automation startup revolutionizing business processes with intelligent automation. A passionate software developer and AI enthusiast, Gaurav Upadhyay is dedicated to building innovative, user-centric solutions.
+              I&apos;m <strong>Gaurav Upadhyay</strong> — a software engineer,
+              AI researcher, and founder currently pursuing an Integrated
+              Master&apos;s in AI (IMCA) at Parul University. My work centers on
+              one question: how much of a business can run itself if the
+              automation is intelligent enough?
             </p>
-            <div className="pt-4">
-              <a href="/who-is-gaurav-upadhyay" className="text-primary hover:underline font-medium">Read more about Gaurav Upadhyay &rarr;</a>
+            <p className="text-lg text-muted-foreground">
+              As Co-Founder and Chief Scientist at <strong>amTop</strong>, I
+              lead the technical vision behind agentic marketing automation —
+              AI systems built to independently manage campaigns for hundreds of
+              startups at once, forecasting trends and optimizing ROI without
+              constant human oversight.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              I&apos;m also the Founder of <strong>ThinkFlowGPT</strong>, where
+              I&apos;m applying the same philosophy to broader business
+              workflows: replace fragmented manual processes with AI that
+              actually gets things done.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              My technical background spans full-stack development (React.js,
+              Next.js, TypeScript), systems-level programming (Java, C++,
+              Python), databases, distributed computing, and neural networks —
+              a foundation I&apos;ve built through both formal study and
+              hands-on product work.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              I&apos;m drawn to hard, unsolved problems — the kind that need a
+              system rebuilt from first principles rather than patched. If
+              you&apos;re working on agentic AI, automation, or anything at that
+              frontier, I&apos;d love to{" "}
+              <a href="#contact" className="text-primary hover:underline font-medium">
+                connect
+              </a>
+              .
+            </p>
+            <p className="text-base text-muted-foreground/90 pt-2 border-t border-border/50 mt-6">
+              Gaurav Upadhyay is an AI engineer and startup founder based in
+              India, working on agentic AI and marketing automation. As
+              Co-Founder and Chief Scientist at amTop, he builds AI agents that
+              autonomously manage marketing campaigns for startups at scale. He
+              also founded ThinkFlowGPT, an AI-driven workflow automation
+              platform.
+            </p>
+            <div className="pt-4 text-center">
+              <a
+                href="/who-is-gaurav-upadhyay"
+                className="text-primary hover:underline font-medium"
+              >
+                Read the full biography of Gaurav Upadhyay &rarr;
+              </a>
             </div>
           </div>
         </AnimatedSection>
@@ -90,7 +139,9 @@ export default function About() {
             <AnimatedSection key={item.title} type="scale" delay={index * 0.1}>
               <Card className="p-6 h-full hover:bg-primary/5 transition-colors">
                 {item.icon && (
-                  <item.icon className={`w-10 h-10 mb-4 ${iconColors[index % iconColors.length]}`} />
+                  <item.icon
+                    className={`w-10 h-10 mb-4 ${iconColors[index % iconColors.length]}`}
+                  />
                 )}
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground">{item.description}</p>
@@ -105,10 +156,12 @@ export default function About() {
           delay={0.2}
           className="text-center mb-12"
         >
-          <h3 className="text-2xl font-semibold mb-2">Technical Expertise</h3>
+          <h3 id="skills" className="text-2xl font-semibold mb-2">
+            Technical Expertise
+          </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My diverse skill set enables me to deliver comprehensive solutions
-            across the entire technology stack.
+            A foundation spanning full-stack product work, systems programming,
+            and agentic AI research.
           </p>
         </AnimatedSection>
 
