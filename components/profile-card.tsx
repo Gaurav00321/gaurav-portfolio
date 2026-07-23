@@ -6,7 +6,7 @@ import { Github, Instagram, Linkedin, MapPin, Twitter } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const links = {
-  github: "https://github.com/Gaurav00321",
+  github: "https://github.com/gauravupadhyay-ai",
   linkedin: "https://www.linkedin.com/in/gauravupadhyay-ai",
   twitter: "https://x.com/gauravu_ai",
   instagram: "https://www.instagram.com/gauravupadhyay.ai",

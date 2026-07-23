@@ -44,7 +44,7 @@ const projects: Project[] = [
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3"],
     category: "frontend",
     demoUrl: "https://aether-os-landing-page.vercel.app",
-    githubUrl: "https://github.com/Gaurav00321/AetherOS-landingPage",
+    githubUrl: "https://github.com/gauravupadhyay-ai/AetherOS-landingPage",
     details:
       "3D Teams is a premium web service dedicated to building stunning, interactive 3D websites for companies and customers. We specialize in crafting immersive digital experiences that blend cutting-edge 3D design, animation, and web development to elevate brands and captivate audiences. Our team ensures seamless performance, responsiveness, and customization, delivering visually striking websites that stand out in the digital landscape.",
   },
@@ -65,7 +65,7 @@ const projects: Project[] = [
     ],
     category: "fullstack",
     demoUrl: "https://thinkflowgpt.vercel.app",
-    githubUrl: "https://github.com/Gaurav00321/thinkflow-gpt",
+    githubUrl: "https://github.com/gauravupadhyay-ai/thinkflow-gpt",
     details:
       "ThinkFlowGPT is an AI-powered innovation designed to redefine automation and intelligent decision-making. Built with cutting-edge machine learning and natural language processing, it streamlines complex workflows, optimizes efficiency, and empowers businesses to scale effortlessly. ThinkFlowGPT isn't just an AI tool—it's a vision for the future, where automation adapts, learns, and enhances productivity without replacing human ingenuity.",
   },
@@ -78,7 +78,7 @@ const projects: Project[] = [
     tags: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
     category: "frontend",
     demoUrl: "https://3d-teams-portfolio.vercel.app",
-    githubUrl: "https://github.com/Gaurav00321/3d-portfolio",
+    githubUrl: "https://github.com/gauravupadhyay-ai/3d-portfolio",
     details:
       "This portfolio website showcases creative work through an immersive user experience. Features include 3D model viewers using Three.js, smooth page transitions with Framer Motion, responsive design with Tailwind CSS, and a custom-built contact form with validation.",
   },
@@ -93,7 +93,7 @@ const projects: Project[] = [
     demoUrl:
       "https://gaurav00321.github.io/InteractiveTearableClothSimulation/",
     githubUrl:
-      "https://github.com/Gaurav00321/InteractiveTearableClothSimulation",
+      "https://github.com/gauravupadhyay-ai/InteractiveTearableClothSimulation",
     details:
       "A dynamic 3D cloth simulation built using HTML5 Canvas and JavaScript, featuring tearable interactions and realistic cloth physics.",
   },
@@ -106,7 +106,7 @@ const projects: Project[] = [
     tags: ["Three.js", "JavaScript", "HTML5", "CSS3", "Physics"],
     category: "frontend",
     demoUrl: "https://gaurav00321.github.io/3D-ClothSimulation",
-    githubUrl: "https://github.com/Gaurav00321/3D-ClothSimulation",
+    githubUrl: "https://github.com/gauravupadhyay-ai/3D-ClothSimulation",
     details:
       "The simulation replicates realistic cloth behavior such as deformation, stretching, and interaction with external forces. The project leverages physics-based principles, specifically Verlet integration, to model the behavior of cloth under gravity and user interaction.",
   },
@@ -119,7 +119,7 @@ const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     category: "frontend",
     demoUrl: "https://gaurav00321.github.io/tic-tac-toeJS/",
-    githubUrl: "https://github.com/Gaurav00321/tic-tac-toeJS",
+    githubUrl: "https://github.com/gauravupadhyay-ai/tic-tac-toeJS",
     details:
       "A classic Tic Tac Toe game with a modern interface. Features include a responsive game board, interactive gameplay with X and O markers, turn tracking, win/draw detection, score tracking, and a clean minimalist design. The game includes visual feedback for winning combinations and a restart option for continuous play.",
   },

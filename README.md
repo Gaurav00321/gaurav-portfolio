@@ -44,7 +44,7 @@ This portfolio website highlights Gaurav Upadhyay's journey as a software develo
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Gaurav00321/gaurav-portfolio.git
+   git clone https://github.com/gauravupadhyay-ai/gaurav-portfolio.git
    cd gaurav-portfolio
    ```
 
@@ -110,7 +110,7 @@ npm run lint
 
 This project is optimized for deployment on [Vercel](https://vercel.com/):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Gaurav00321/gaurav-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gauravupadhyay-ai/gaurav-portfolio)
 
 ## 📄 License
 
@@ -120,10 +120,10 @@ This project is private and proprietary.
 
 **Gaurav Upadhyay**
 - Website: [gauravupadhyay.vercel.app](https://gauravupadhyay.vercel.app)
-- GitHub: [@Gaurav00321](https://github.com/Gaurav00321)
-- LinkedIn: [gauravupadhyay-tech](https://www.linkedin.com/in/gauravupadhyay-tech)
-- Twitter: [@gauravXupadhyay](https://x.com/gauravXupadhyay)
-- Instagram: [@gauravxupadhyay](https://www.instagram.com/gauravxupadhyay)
+- GitHub: [@gauravupadhyay-ai](https://github.com/gauravupadhyay-ai)
+- LinkedIn: [gauravupadhyay-ai](https://www.linkedin.com/in/gauravupadhyay-ai)
+- X: [@gauravu_ai](https://x.com/gauravu_ai)
+- Instagram: [@gauravupadhyay.ai](https://www.instagram.com/gauravupadhyay.ai)
 
 ## 🙏 Acknowledgments
 
