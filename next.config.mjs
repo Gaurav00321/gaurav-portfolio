@@ -7,7 +7,6 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -15,6 +14,20 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: "/sitemap",
+        destination: "/sitemap.xml",
+        permanent: true,
+      },
+      {
+        source: "/sitemap/",
+        destination: "/sitemap.xml",
+        permanent: true,
+      },
+    ]
   },
 }
 
