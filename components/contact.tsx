@@ -22,10 +22,10 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Twitter,
   Instagram,
   Send,
 } from "lucide-react";
+import { XIcon } from "@/components/x-icon";
 
 const socialLinks = {
   github: "https://github.com/gauravupadhyay-ai",
@@ -50,7 +50,11 @@ const formSchema = z.object({
   }),
 });
 
-export default function Contact() {
+export default function Contact({
+  hideHeader = false,
+}: {
+  hideHeader?: boolean
+}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -102,8 +106,13 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-20 px-4">
+    <section
+      id="contact"
+      aria-labelledby={hideHeader ? undefined : "contact-heading"}
+      className="py-12 sm:py-20 px-4"
+    >
       <div className="container max-w-6xl mx-auto">
+        {!hideHeader ? (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,6 +128,7 @@ export default function Contact() {
             I&apos;d love to talk.
           </p>
         </motion.div>
+        ) : null}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <motion.div
@@ -186,9 +196,9 @@ export default function Contact() {
                   href={socialLinks.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
+                  aria-label="X"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <XIcon className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>

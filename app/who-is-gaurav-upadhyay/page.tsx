@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     username: "gauravu_ai",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Gaurav Upadhyay profile card — Chief Scientist at amTop",
+        url: siteConfig.profileImage,
+        width: 512,
+        height: 512,
+        alt: siteConfig.profileImageAlt,
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Who is Gaurav Upadhyay?",
     description: siteConfig.ogDescription,
-    images: ["/twitter-image"],
+    images: [siteConfig.profileImage],
     creator: "@gauravu_ai",
   },
   alternates: {

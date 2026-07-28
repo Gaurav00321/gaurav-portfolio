@@ -19,24 +19,26 @@ export const siteConfig = {
   longBio:
     "Gaurav Upadhyay is a software engineer, AI researcher, and startup founder building at the intersection of agentic AI and business automation. As Co-Founder and Chief Scientist at amTop, he leads the research and technical architecture behind autonomous marketing agents. He is also the Founder of ThinkFlowGPT, an AI-driven workflow automation startup.",
   url: "https://gauravupadhyay.vercel.app",
-  ogImage: "https://gauravupadhyay.vercel.app/opengraph-image",
+  profileImage: "/Gaurav.png",
+  profileImageAlt:
+    "Gaurav Upadhyay — Co-Founder & Chief Scientist at amTop, Founder of ThinkFlowGPT",
   photo: "https://gauravupadhyay.vercel.app/Gaurav.png",
+  ogImage: "https://gauravupadhyay.vercel.app/Gaurav.png",
   email: "gauravupadhyay.career@gmail.com",
   education: "Integrated Master's in AI (IMCA), Parul University",
   knowsAbout: [
-    "Artificial Intelligence",
-    "Agentic Systems",
-    "Marketing Automation",
-    "Distributed Computing",
-    "Full-Stack Development",
-    "ThinkFlowGPT",
-    "amTop",
+    "Agentic AI",
+    "AI Marketing Automation",
+    "Workflow Automation",
+    "Neural Networks",
+    "Distributed Systems",
   ] as const,
   links: {
     github: "https://github.com/gauravupadhyay-ai",
     linkedin: "https://www.linkedin.com/in/gauravupadhyay-ai",
     twitter: "https://x.com/gauravu_ai",
     instagram: "https://www.instagram.com/gauravupadhyay.ai",
+    crunchbase: "https://www.crunchbase.com/person/gaurav-upadhyay-061c",
   },
   /** Machine-readable entity facts for AI search / Knowledge Graph */
   entityFacts: [
@@ -99,10 +101,10 @@ export const defaultMetadata: Metadata = {
     username: "gauravu_ai",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Gaurav Upadhyay — Co-Founder & Chief Scientist at amTop | Founder of ThinkFlowGPT",
+        url: siteConfig.profileImage,
+        width: 512,
+        height: 512,
+        alt: siteConfig.profileImageAlt,
       },
     ],
   },
@@ -110,7 +112,7 @@ export const defaultMetadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.ogDescription,
-    images: ["/twitter-image"],
+    images: [siteConfig.profileImage],
     creator: "@gauravu_ai",
     site: "@gauravu_ai",
   },
@@ -142,6 +144,7 @@ export const defaultMetadata: Metadata = {
       "text/plain": "/llms.txt",
     },
   },
+  manifest: "/manifest.webmanifest",
   verification: {
     google: "QSox7IUrhJ6YB6ZL_GmO8NQ97zYcxurqnl1R6QBxu04",
   },

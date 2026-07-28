@@ -2,25 +2,35 @@ import type { MetadataRoute } from "next"
 
 export const dynamic = "force-static"
 
+/** Production robots.txt — search engines + AI answer-engine crawlers. */
 export default function robots(): MetadataRoute.Robots {
+  const allowAll = { allow: "/" as const, disallow: ["/private/", "/api/"] }
+
+  const aiAndSearchBots = [
+    "*",
+    "Googlebot",
+    "Google-Extended",
+    "Bingbot",
+    "GPTBot",
+    "ChatGPT-User",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Bytespider",
+    "CCBot",
+    "Meta-ExternalAgent",
+    "cohere-ai",
+    "Diffbot",
+    "YouBot",
+  ]
+
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/private/", "/api/"],
-      },
-      { userAgent: "GPTBot", allow: "/" },
-      { userAgent: "ChatGPT-User", allow: "/" },
-      { userAgent: "Google-Extended", allow: "/" },
-      { userAgent: "Googlebot", allow: "/" },
-      { userAgent: "ClaudeBot", allow: "/" },
-      { userAgent: "anthropic-ai", allow: "/" },
-      { userAgent: "PerplexityBot", allow: "/" },
-      { userAgent: "Applebot-Extended", allow: "/" },
-      { userAgent: "Bytespider", allow: "/" },
-      { userAgent: "CCBot", allow: "/" },
-    ],
+    rules: aiAndSearchBots.map((userAgent) => ({
+      userAgent,
+      ...allowAll,
+    })),
     sitemap: "https://gauravupadhyay.vercel.app/sitemap.xml",
     host: "https://gauravupadhyay.vercel.app",
   }

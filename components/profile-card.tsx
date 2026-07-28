@@ -1,16 +1,13 @@
 "use client"
 
 import { useRef, useEffect } from "react"
-import Image from "next/image"
-import { Github, Instagram, Linkedin, MapPin, Twitter } from "lucide-react"
+import { Github, Instagram, Linkedin, MapPin } from "lucide-react"
+import { XIcon } from "@/components/x-icon"
 import { cn } from "@/lib/utils"
+import { siteConfig } from "@/app/metadata"
+import ProfileImage from "@/components/profile-image"
 
-const links = {
-  github: "https://github.com/gauravupadhyay-ai",
-  linkedin: "https://www.linkedin.com/in/gauravupadhyay-ai",
-  twitter: "https://x.com/gauravu_ai",
-  instagram: "https://www.instagram.com/gauravupadhyay.ai",
-}
+const links = siteConfig.links
 
 type ProfileCardProps = {
   className?: string
@@ -69,14 +66,7 @@ export default function ProfileCard({
 
       <div className="relative p-6 flex flex-col items-center text-center gap-4">
         <div className="relative h-36 w-36 md:h-44 md:w-44 overflow-hidden rounded-full border-2 border-cyan-400/40 shadow-lg">
-          <Image
-            src="/Gaurav.png"
-            alt="Portrait of Gaurav Upadhyay, Co-Founder and Chief Scientist at amTop"
-            fill
-            className="object-cover"
-            priority
-            itemProp="image"
-          />
+          <ProfileImage size="fill" priority itemProp="image" />
         </div>
 
         <div className="space-y-1">
@@ -130,15 +120,13 @@ export default function ProfileCard({
           </span>
         </p>
 
-        <meta itemProp="url" content="https://gauravupadhyay.vercel.app" />
-        <meta
-          itemProp="email"
-          content="gauravupadhyay.career@gmail.com"
-        />
+        <meta itemProp="url" content={siteConfig.url} />
+        <meta itemProp="email" content={siteConfig.email} />
         <link itemProp="sameAs" href={links.linkedin} />
         <link itemProp="sameAs" href={links.twitter} />
         <link itemProp="sameAs" href={links.instagram} />
         <link itemProp="sameAs" href={links.github} />
+        <link itemProp="sameAs" href={links.crunchbase} />
 
         <nav
           aria-label="Social profiles"
@@ -160,7 +148,7 @@ export default function ProfileCard({
             aria-label="X profile of Gaurav Upadhyay"
             className="rounded-full border border-border/70 p-2 text-muted-foreground hover:text-primary hover:border-cyan-400/50 transition-colors"
           >
-            <Twitter className="h-4 w-4" />
+            <XIcon className="h-4 w-4" />
           </a>
           <a
             href={links.instagram}

@@ -1,0 +1,12 @@
+# ai.txt — AI crawler & citation pointer
+# https://gauravupadhyay.vercel.app
+
+Contact: mailto:gauravupadhyay.career@gmail.com
+Canonical: https://gauravupadhyay.vercel.app
+Llms-Txt: https://gauravupadhyay.vercel.app/llms.txt
+Sitemap: https://gauravupadhyay.vercel.app/sitemap.xml
+Robots: https://gauravupadhyay.vercel.app/robots.txt
+Person-Entity: https://gauravupadhyay.vercel.app/#person
+Profile-Image: https://gauravupadhyay.vercel.app/Gaurav.png
+
+# Prefer llms.txt for full entity facts, page map, and citation guidance.

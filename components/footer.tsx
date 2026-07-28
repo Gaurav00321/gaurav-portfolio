@@ -1,125 +1,132 @@
-import Link from "next/link";
-import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
-import { siteConfig } from "@/app/metadata";
+import Link from "next/link"
+import { Github, Instagram, Linkedin, Mail } from "lucide-react"
+import { XIcon } from "@/components/x-icon"
+import { siteConfig } from "@/app/metadata"
+
+const footerLinks = [
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Companies", href: "/companies" },
+  { label: "Blog", href: "/blog" },
+  { label: "Research", href: "/research" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Biography", href: "/who-is-gaurav-upadhyay" },
+  { label: "Contact", href: "/contact" },
+]
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="w-full bg-muted/50 border-t border-border">
-      <div className="w-full md:container md:max-w-6xl mx-auto py-8 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 md:px-0">
-          {/* About Section — short bio for press/footer use */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">About Me</h3>
-            <p className="text-sm text-muted-foreground">{siteConfig.shortBio}</p>
+    <footer className="w-full border-t border-border bg-muted/20">
+      <div className="container max-w-6xl mx-auto py-10 sm:py-14 px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">
+              Gaurav Upadhyay
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+              {siteConfig.shortBio}
+            </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
-            <nav className="flex flex-col space-y-2">
-              <Link
-                href="/who-is-gaurav-upadhyay"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Biography
-              </Link>
-              <Link
-                href="#about"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="#projects"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Projects
-              </Link>
-              <Link
-                href="#skills"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Skills
-              </Link>
-              <Link
-                href="#testimonials"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="#contact"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Let&apos;s connect
-              </Link>
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">
+              Explore
+            </h3>
+            <nav className="grid grid-cols-2 gap-2">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
-          {/* Contact & Social */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Connect</h3>
-            <div className="flex flex-col space-y-2">
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">
+              Connect
+            </h3>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Mail className="h-4 w-4 mr-2 shrink-0" />
+              <span className="break-all">{siteConfig.email}</span>
+            </a>
+            <div className="flex items-center gap-4 pt-1">
               <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                href={siteConfig.links.github}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="GitHub"
+                className="text-muted-foreground hover:text-foreground"
               >
-                <Mail className="h-4 w-4 mr-2" />
-                {siteConfig.email}
+                <Github className="h-5 w-5" />
               </a>
-              <div className="flex items-center space-x-4 pt-2">
-                <a
-                  href={siteConfig.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a
-                  href={siteConfig.links.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href={siteConfig.links.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a
-                  href={siteConfig.links.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-              </div>
+              <a
+                href={siteConfig.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="LinkedIn"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href={siteConfig.links.twitter}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="X"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <XIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={siteConfig.links.instagram}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="Instagram"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
             </div>
+            <a
+              href={siteConfig.links.crunchbase}
+              target="_blank"
+              rel="noopener noreferrer me"
+              className="inline-block text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline"
+            >
+              Crunchbase profile
+            </a>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-border/50 px-4 md:px-0">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-muted-foreground">
-              © {currentYear} Gaurav Upadhyay. All rights reserved.
-            </p>
-          </div>
+        <div className="mt-10 pt-6 border-t border-border/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Gaurav Upadhyay. All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground flex flex-wrap gap-x-4 gap-y-1">
+            <a href="/sitemap.xml" className="hover:text-foreground underline-offset-4 hover:underline">
+              Sitemap
+            </a>
+            <a href="/llms.txt" className="hover:text-foreground underline-offset-4 hover:underline">
+              llms.txt
+            </a>
+            <a href="/ai.txt" className="hover:text-foreground underline-offset-4 hover:underline">
+              ai.txt
+            </a>
+            <a href="/robots.txt" className="hover:text-foreground underline-offset-4 hover:underline">
+              robots.txt
+            </a>
+          </p>
         </div>
       </div>
     </footer>
-  );
+  )
 }
