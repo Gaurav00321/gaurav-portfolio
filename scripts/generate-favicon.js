@@ -2,41 +2,38 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
-const sizes = [
-  { name: "favicon-16x16.png", size: 16 },
-  { name: "apple-touch-icon.png", size: 180 },
+const root = path.join(__dirname, "..");
+const sourceImage = path.join(root, "public/Gaurav.png");
+
+const outputs = [
+  { file: "public/favicon-16x16.png", size: 16 },
+  { file: "public/favicon-32x32.png", size: 32 },
+  { file: "public/apple-touch-icon.png", size: 180 },
+  { file: "app/icon.png", size: 32 },
+  { file: "app/apple-icon.png", size: 180 },
 ];
 
 async function generateFavicons() {
-  const sourceImage = path.join(__dirname, "../public/Gaurav.png");
-  const outputDir = path.join(__dirname, "../public");
-
-  // Generate PNG favicons
-  for (const { name, size } of sizes) {
-    await sharp(sourceImage)
-      .resize(size, size, {
-        fit: "cover",
-        position: "center",
-      })
-      .toFile(path.join(outputDir, name));
+  if (!fs.existsSync(sourceImage)) {
+    throw new Error(`Source image not found: ${sourceImage}`);
   }
 
-  // Generate ICO file (16x16 and 32x32)
-  await sharp(sourceImage)
-    .resize(32, 32, {
-      fit: "cover",
-      position: "center",
-    })
-    .toFile(path.join(outputDir, "favicon-32x32.png"));
+  for (const { file, size } of outputs) {
+    const outPath = path.join(root, file);
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
 
-  await sharp(sourceImage)
-    .resize(16, 16, {
+    const pipeline = sharp(sourceImage).resize(size, size, {
       fit: "cover",
-      position: "center",
-    })
-    .toFile(path.join(outputDir, "favicon-16x16.png"));
+      position: "centre",
+    });
 
-  console.log("Favicon files generated successfully!");
+    await pipeline.png().toFile(outPath);
+  }
+
+  console.log("Favicon files generated from public/Gaurav.png");
 }
 
-generateFavicons().catch(console.error);
+generateFavicons().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
